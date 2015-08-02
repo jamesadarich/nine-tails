@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "out": "./js/nine-tails.js",
+        "outDir": "./js"
+    },
+    "compileOnSave": true,
+    "filesGlob": [
+        "./src/**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./src/color.ts",
+        "./src/hue.ts",
+        "./src/rule.ts",
+        "./src/theme.ts"
+    ]
+}
