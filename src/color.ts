@@ -6,13 +6,15 @@ module NineTails {
       red: number;
       green: number;
       blue: number;
+      public name: string;
 
-      constructor(red: number, green: number, blue: number) {
+      constructor( name: string, red: number, green: number, blue: number) {
           this.red = red;
           this.green = green;
           this.blue = blue;
 
           this.handlers = [];
+          this.name = name;
       }
 
       get() : string {

@@ -8,8 +8,8 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "out": "./js/nine-tails-demo.js",
-        "outDir": "./js"
+        "out": "../js/nine-tails-dev-tools.js",
+        "outDir": "../js"
     },
     "compileOnSave": true,
     "filesGlob": [
@@ -17,6 +17,6 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./ts/demo.ts"
+        "./toolkit.ts"
     ]
 }

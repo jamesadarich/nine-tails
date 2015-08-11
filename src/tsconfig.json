@@ -8,18 +8,18 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "out": "./js/nine-tails.js",
-        "outDir": "./js"
+        "out": "../js/nine-tails.js",
+        "outDir": "../js"
     },
     "compileOnSave": true,
     "filesGlob": [
-        "./src/**/*.ts",
+        "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./src/color.ts",
-        "./src/hue.ts",
-        "./src/rule.ts",
-        "./src/theme.ts"
+        "./color.ts",
+        "./hue.ts",
+        "./rule.ts",
+        "./theme.ts"
     ]
 }

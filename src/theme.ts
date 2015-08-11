@@ -4,17 +4,26 @@ module NineTails {
   export class Theme {
 
     private styleSheet: CSSStyleSheet;
+    public colors: Color[];
 
     constructor () {
-      var styleElement = <HTMLStyleElement>document.getElementById('nine-tails');
-      if (styleElement === null) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'nine-tails';
-        styleElement.title = 'nine-tails';
-        document.head.appendChild(styleElement);
-      }
+      var styleElement = document.createElement('style');
+      styleElement.title = 'nine-tails';
+      styleElement.className = 'nine-tails-theme';
+      document.head.appendChild(styleElement);
 
       this.styleSheet = <CSSStyleSheet>styleElement.sheet;
+
+      //change this to create class that extends CSSStyleSheet
+      styleElement['theme'] = this;
+
+      this.colors = [];
+    }
+
+    createColor(name: string, red: number, green: number, blue: number): Color {
+      var color = new Color(name, red, green, blue);
+      this.colors.push(color);
+      return color;
     }
 
     createRule(selector: string) : Rule {
