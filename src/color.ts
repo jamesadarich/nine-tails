@@ -1,38 +1,32 @@
-/*/// <reference path="../typings/threejs/three.d.ts"/>*/
+/// <reference path="./style.ts"/>
 
 module NineTails {
-  export class Color {
-      private handlers;
+   export class Color extends Style {
       red: number;
       green: number;
       blue: number;
+      alpha: number;
       public name: string;
 
-      constructor( name: string, red: number, green: number, blue: number) {
-          this.red = red;
-          this.green = green;
-          this.blue = blue;
-
-          this.handlers = [];
-          this.name = name;
+      constructor(red: number, green: number, blue: number, alpha: number, name?: string) {
+         super();
+         this.red = red;
+         this.green = green;
+         this.blue = blue;
+         this.alpha = alpha;
+         this.name = name;
       }
 
       get() : string {
-          return 'rgb(' + this.red + ', ' + this.green + ', ' + this.blue + ')';
+         return 'rgba(' + this.red + ', ' + this.green + ', ' + this.blue + ', ' + this.alpha + ')';
       }
 
-      set(red : number, green : number, blue : number) : void {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
-
-        for(var i = 0; i < this.handlers.length; i++) {
-          this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() }, this.handlers[i].extra);
-        }
+      set(red : number, green : number, blue : number, alpha: number) : void {
+         this.red = red;
+         this.green = green;
+         this.blue = blue;
+         this.alpha = alpha;
+         this.notifyHandlers();
       }
-
-      onSet(handler, context, extra) : void {
-        this.handlers.push({ handler: handler, context: context, extra: extra });
-      }
-  }
+   }
 }

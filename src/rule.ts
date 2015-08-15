@@ -1,4 +1,4 @@
-///<reference path="color.ts"/>
+///<reference path="style.ts"/>
 
 module NineTails {
   export class Rule {
@@ -9,12 +9,12 @@ module NineTails {
       this.cssRule = cssRule;
     }
 
-    linkStyle(style : string, color : Color) {
-      color.onSet(this.setStyle, this, style);
-      this.cssRule.style[style] = color.get();
+    public linkStyle(styleName : string, style : Style): void {
+      style.onSet(this.setStyle, this, styleName);
+      this.cssRule.style[styleName] = style.get();
     }
 
-    setStyle(update, style : string) {
+    private setStyle(update, style : string): void {
       this.cssRule.style[style] = update.newValue;
     }
   }

@@ -3,3 +3,9 @@ js
 
 # npm
 node_modules
+
+# tsd
+typings
+
+# compiled test files
+/test/**/*.spec.js

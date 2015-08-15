@@ -11,15 +11,15 @@ module NineTails {
       this.contrastColor = contrastColor;
 
       if (color === undefined) {
-        this.color = new Color(0, 0, 0);
+        this.color = new Color(0, 0, 0, 1);
       }
 
       if (contrastColor === undefined) {
         if ((this.color.red + this.color.green + this.color.blue) > 382) {
-          this.contrastColor = new Color(0, 0, 0);
+          this.contrastColor = new Color(0, 0, 0, 1);
         }
         else {
-          this.contrastColor = new Color(255, 255, 255);
+          this.contrastColor = new Color(255, 255, 255, 1);
         }
       }
     }

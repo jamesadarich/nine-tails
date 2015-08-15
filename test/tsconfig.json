@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "amd",
         "declaration": false,
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "out": "./js/nine-tails-demo.js",
         "outDir": "./js"
     },
     "buildOnSave": true,
@@ -18,6 +17,6 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./ts/demo.ts"
+        "./style.spec.ts"
     ]
 }

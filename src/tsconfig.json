@@ -11,15 +11,25 @@
         "out": "../js/nine-tails.js",
         "outDir": "../js"
     },
+    "buildOnSave": true,
     "compileOnSave": true,
     "filesGlob": [
         "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./border-style-type.ts",
+        "./border-style.ts",
         "./color.ts",
         "./hue.ts",
+        "./overflow-type.ts",
+        "./overflow.ts",
+        "./position-type.ts",
+        "./position.ts",
         "./rule.ts",
+        "./size-type.ts",
+        "./size.ts",
+        "./style.ts",
         "./theme.ts"
     ]
 }

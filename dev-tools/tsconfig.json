@@ -11,12 +11,15 @@
         "out": "../js/nine-tails-dev-tools.js",
         "outDir": "../js"
     },
+    "buildOnSave": true,
     "compileOnSave": true,
     "filesGlob": [
         "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./color-editor.ts",
+        "./size-editor.ts",
         "./toolkit.ts"
     ]
 }

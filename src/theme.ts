@@ -1,10 +1,13 @@
 ///<reference path="rule.ts"/>
+///<reference path="size.ts"/>
+///<reference path="size-type.ts"/>
 
 module NineTails {
   export class Theme {
 
     private styleSheet: CSSStyleSheet;
     public colors: Color[];
+    public sizes: Size[];
 
     constructor () {
       var styleElement = document.createElement('style');
@@ -18,12 +21,19 @@ module NineTails {
       styleElement['theme'] = this;
 
       this.colors = [];
+      this.sizes = [];
     }
 
-    createColor(name: string, red: number, green: number, blue: number): Color {
-      var color = new Color(name, red, green, blue);
+    createColor(red: number, green: number, blue: number, alpha: number, name?: string): Color {
+      var color = new Color(red, green, blue, alpha, name);
       this.colors.push(color);
       return color;
+    }
+
+    createSize(value: number, type: SizeType): Size {
+      var size = new Size(value, type);
+      this.sizes.push(size);
+      return size;
     }
 
     createRule(selector: string) : Rule {

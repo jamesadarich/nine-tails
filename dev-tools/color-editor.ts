@@ -29,7 +29,7 @@ module NineTails.DevTools {
         redSlider.value = color.red.toString();
         redSlider.style.width = '80px';
         redSlider.onchange = function () {
-          color.set(parseInt(redSlider.value), color.green, color.blue);
+          color.set(parseInt(redSlider.value), color.green, color.blue, color.alpha);
         }
 
         this.element.appendChild(redSlider);
@@ -41,7 +41,7 @@ module NineTails.DevTools {
         greenSlider.value = color.green.toString();
         greenSlider.style.width = '80px';
         greenSlider.onchange = function () {
-          color.set(color.red, parseInt(greenSlider.value), color.blue);
+          color.set(color.red, parseInt(greenSlider.value), color.blue, color.alpha);
         }
 
         this.element.appendChild(greenSlider);
@@ -53,10 +53,23 @@ module NineTails.DevTools {
         blueSlider.value = color.blue.toString();
         blueSlider.style.width = '80px';
         blueSlider.onchange = function () {
-          color.set(color.red, color.green, parseInt(blueSlider.value));
+          color.set(color.red, color.green, parseInt(blueSlider.value), color.alpha);
         }
 
         this.element.appendChild(blueSlider);
+
+        var alphaSlider = document.createElement('input');
+        alphaSlider.type = 'range';
+        alphaSlider.min = '0';
+        alphaSlider.max = '1';
+        alphaSlider.step = '0.01';
+        alphaSlider.value = color.blue.toString();
+        alphaSlider.style.width = '80px';
+        alphaSlider.onchange = function () {
+          color.set(color.red, color.green, color.blue, parseInt(alphaSlider.value));
+        }
+
+        this.element.appendChild(alphaSlider);
     }
   }
 }
