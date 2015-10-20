@@ -1,3 +1,5 @@
+/// <reference path="./nine-tails.ts"/>
+
 module NineTails {
    export enum OverflowType {
       Auto,

@@ -8,7 +8,8 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "./js"
+        "outDir": "./js",
+        "sourceMap": true
     },
     "buildOnSave": true,
     "compileOnSave": true,
@@ -17,6 +18,14 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./style.spec.ts"
+        "./border-style.spec.ts",
+        "./color.spec.ts",
+        "./hue.spec.ts",
+        "./overflow.spec.ts",
+        "./position-type.spec.ts",
+        "./rule.spec.ts",
+        "./size.spec.ts",
+        "./style.spec.ts",
+        "./theme.spec.ts"
     ]
 }

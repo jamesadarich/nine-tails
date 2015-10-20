@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="./size-type.ts"/>
 ///<reference path="./style.ts"/>
 
@@ -21,7 +22,7 @@ module NineTails {
         }
       }
 
-      set(value: number, type?: number) : void {
+      set(value: number, type?: SizeType) : void {
         this.value = value;
 
         if (type != null) {

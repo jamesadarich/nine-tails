@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="./overflow-type.ts"/>
 ///<reference path="./style.ts"/>
 

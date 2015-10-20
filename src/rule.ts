@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="style.ts"/>
 
 module NineTails {
@@ -14,8 +15,8 @@ module NineTails {
       this.cssRule.style[styleName] = style.get();
     }
 
-    private setStyle(update, style : string): void {
-      this.cssRule.style[style] = update.newValue;
+    private setStyle(update, styleName : string): void {
+      this.cssRule.style[styleName] = update.newValue;
     }
   }
 }

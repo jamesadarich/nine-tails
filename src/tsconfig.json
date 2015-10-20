@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
-        "declaration": false,
+        "module": "amd",
+        "declaration": true,
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "out": "../js/nine-tails.js",
-        "outDir": "../js"
+        "outDir": "../js",
+        "sourceMap": true
     },
     "buildOnSave": true,
     "compileOnSave": true,
@@ -22,6 +23,7 @@
         "./border-style.ts",
         "./color.ts",
         "./hue.ts",
+        "./nine-tails.ts",
         "./overflow-type.ts",
         "./overflow.ts",
         "./position-type.ts",

@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="rule.ts"/>
 ///<reference path="size.ts"/>
 ///<reference path="size-type.ts"/>
@@ -5,7 +6,7 @@
 module NineTails {
   export class Theme {
 
-    private styleSheet: CSSStyleSheet;
+    public styleSheet: CSSStyleSheet;
     public colors: Color[];
     public sizes: Size[];
 

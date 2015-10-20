@@ -1,6 +1,8 @@
+/// <reference path="./nine-tails.ts"/>
+
 module NineTails {
   export class Style {
-    public handlers;
+    public handlers: any;
 
     public constructor () {
       this.handlers = [];
@@ -12,12 +14,12 @@ module NineTails {
 
     public notifyHandlers(): void {
       for(var i = 0; i < this.handlers.length; i++) {
-        this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() }, this.handlers[i].extra);
+        this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() }, this.handlers[i].extras);
       }
     }
 
-    public onSet(handler, context, extra) : void {
-      this.handlers.push({ handler: handler, context: context, extra: extra });
+    public onSet(handler: any, context: any, extras: any) : void {
+      this.handlers.push({ handler: handler, context: context, extras: extras });
     }
   }
 }

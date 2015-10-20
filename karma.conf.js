@@ -7,7 +7,8 @@ module.exports = function(config) {
       plugins: [
          'karma-jasmine',
          'karma-coverage',
-         'karma-phantomjs-launcher'
+         'karma-phantomjs-launcher',
+         'karma-chrome-launcher'
       ],
 
       // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -21,7 +22,8 @@ module.exports = function(config) {
 
       // list of files / patterns to load in the browser
       files: [
-         'test/**/*.js'
+         'test/js/test/**/*.js',
+         'js/nine-tails.js'
       ],
 
 
@@ -33,7 +35,7 @@ module.exports = function(config) {
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
-         'test/js/src/*.js': 'coverage'
+        'js/nine-tails.js': 'coverage'
       },
 
 
@@ -45,8 +47,8 @@ module.exports = function(config) {
       coverageReporter: {
          reporters: [{
 
-           type : 'text-summary',
-         dir : 'test/coverage'
+           type : 'html',
+         dir : 'test/coverage/'
          }]
      },
 
@@ -69,11 +71,11 @@ module.exports = function(config) {
 
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: ['PhantomJS', 'Chrome', 'IE'],
+      browsers: ['Chrome'/*'PhantomJS'*//*, 'Chrome'/*, 'IE'*/],
 
 
       // Continuous Integration mode
       // if true, Karma captures browsers, runs the tests and exits
-      singleRun: false
+      singleRun: true
    })
 }

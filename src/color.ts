@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 /// <reference path="./style.ts"/>
 
 module NineTails {
@@ -14,7 +15,13 @@ module NineTails {
          this.green = green;
          this.blue = blue;
          this.alpha = alpha;
-         this.name = name;
+
+         if (name) {
+            this.name = name;
+         }
+         else {
+            this.name = null;
+         }
       }
 
       get() : string {

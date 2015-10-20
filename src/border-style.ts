@@ -1,4 +1,3 @@
-///<reference path="./border-style-type.ts"/>
 ///<reference path="./style.ts"/>
 
 module NineTails {

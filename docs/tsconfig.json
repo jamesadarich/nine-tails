@@ -9,7 +9,8 @@
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
         "out": "./js/nine-tails-demo.js",
-        "outDir": "./js"
+        "outDir": "./js",
+        "sourceMap": true
     },
     "buildOnSave": true,
     "compileOnSave": true,

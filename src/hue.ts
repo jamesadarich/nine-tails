@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="color.ts"/>
 
 module NineTails {
@@ -9,10 +10,6 @@ module NineTails {
     constructor(color: Color, contrastColor?: Color) {
       this.color = color;
       this.contrastColor = contrastColor;
-
-      if (color === undefined) {
-        this.color = new Color(0, 0, 0, 1);
-      }
 
       if (contrastColor === undefined) {
         if ((this.color.red + this.color.green + this.color.blue) > 382) {

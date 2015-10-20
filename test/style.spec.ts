@@ -1,3 +1,4 @@
+/// <reference path="../src/nine-tails.ts"/>
 ///<reference path="../src/style.ts"/>
 ///<reference path="../typings/jasmine/jasmine.d.ts"/>
 
@@ -23,7 +24,9 @@ describe('Style', function() {
 
          style.onSet(1, 2, 3);
 
-         expect(style.handlers[0]).toBe({ handler: 1, context: 2, extras: 3});
+         expect(style.handlers[0].handler).toBe(1);
+         expect(style.handlers[0].context).toBe(2);
+         expect(style.handlers[0].extras).toBe(3);
       });
    });
 

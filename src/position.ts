@@ -1,3 +1,4 @@
+/// <reference path="./nine-tails.ts"/>
 ///<reference path="./position-type.ts"/>
 ///<reference path="./style.ts"/>
 
