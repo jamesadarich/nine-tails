@@ -1,6 +1,4 @@
-///<reference path="../../src/theme.ts"/>
-///<reference path="../../src/color.ts"/>
-///<reference path="../../src/size-type.ts"/>
+
 
 var theme = new NineTails.Theme();
 var ruleOne = theme.createRule('h1');
@@ -21,3 +19,14 @@ ruleOne.linkStyle('color', colorOne);
 ruleTwo.linkStyle('color', colorTwo);
 ruleThree.linkStyle('color', colorThree);
 ruleFour.linkStyle('padding', sizeOne);
+
+var colorNameResult = theme.createRule('#color-name-result');
+var colorNameColor = theme.createColor(0, 255, 0, 1, 'secondary');
+colorNameResult.linkStyle('background-color', colorNameColor);
+
+document.onreadystatechange = function () {
+var colorNameInput = <HTMLInputElement>document.getElementById('color-name');
+colorNameInput.oninput = function () {
+   colorNameColor.setName(colorNameInput.value);
+}
+}
