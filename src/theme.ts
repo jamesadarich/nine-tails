@@ -7,29 +7,31 @@ module NineTails {
   export class Theme {
 
     public styleSheet: CSSStyleSheet;
-    public colors: Color[];
+    //public colors: Color[];
     public sizes: Size[];
 
     constructor () {
-      var styleElement = document.createElement('style');
-      styleElement.title = 'nine-tails';
-      styleElement.className = 'nine-tails-theme';
+      var styleElement = document.createElement("style");
+      styleElement.title = "nine-tails";
+      styleElement.className = "nine-tails-theme";
       document.head.appendChild(styleElement);
 
       this.styleSheet = <CSSStyleSheet>styleElement.sheet;
 
       //change this to create class that extends CSSStyleSheet
-      styleElement['theme'] = this;
+      styleElement["theme"] = this;
 
-      this.colors = [];
+      //this.colors = [];
       this.sizes = [];
     }
 
-    createColor(red: number, green: number, blue: number, alpha: number, name?: string): Color {
-      var color = new Color(red, green, blue, alpha, name);
+    /*
+    createColor(value: string, name?: string): Color {
+      var color = new Color(value, name);
       this.colors.push(color);
       return color;
     }
+    */
 
     createSize(value: number, type: SizeType): Size {
       var size = new Size(value, type);
@@ -43,7 +45,7 @@ module NineTails {
       for (var i = 0; i < this.styleSheet.cssRules.length; i++) {
         var rule = <CSSStyleRule>this.styleSheet.cssRules[i];
         if (rule.selectorText === selector) {
-          //need to keep the reference to module whilst this isn't compiling correctly
+          //need to keep the reference to module whilst this isn"t compiling correctly
           return new NineTails.Rule(rule);
         }
       }

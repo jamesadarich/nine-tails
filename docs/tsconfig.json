@@ -16,7 +16,8 @@
     "compileOnSave": true,
     "filesGlob": [
         "./**/*.ts",
-        "!./node_modules/**/*.ts"
+        "!../node_modules/**/*.ts",
+        "!../src/**/*.ts"
     ],
     "files": [
         "./ts/demo.ts"

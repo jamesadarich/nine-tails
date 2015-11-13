@@ -8,16 +8,16 @@ module NineTails {
       green: number;
       blue: number;
       alpha: number;
-      public name: string;
-      colorName: string;
-      type: ColorType;
+      hue: number;
+      saturation: number;
+      lightness: number;
 
-      constructor(red: number, green: number, blue: number, alpha: number, name?: string) {
+      public name: string;
+      value: string;
+
+      constructor(value: string, name?: string) {
          super();
-         this.red = red;
-         this.green = green;
-         this.blue = blue;
-         this.alpha = alpha;
+         this.value = value;
 
          if (name) {
             this.name = name;
@@ -25,36 +25,52 @@ module NineTails {
          else {
             this.name = null;
          }
-
-         this.type = ColorType.RGBA;
       }
 
       get() : string {
-         if (this.type === ColorType.Name) {
-            return this.colorName;
-         }
-         else if (this.type === ColorType.RGBA) {
-            return 'rgba(' + this.red + ', ' + this.green + ', ' + this.blue + ', ' + this.alpha + ')';
-         }
-
-         return null;
+         return this.value;
       }
 
-      setName(name: string): void {
-         this.colorName = name;
-         this.type = ColorType.Name;
-
+      set(value: string) : void {
+         this.value = value;
+         this.red = null;
+         this.green = null;
+         this.blue = null;
+         this.alpha = null;
+         this.hue = null;
+         this.saturation = null;
+         this.lightness = null;
          this.notifyHandlers();
       }
 
-      set(red : number, green : number, blue : number, alpha: number) : void {
+      setRgb(red : number, green : number, blue : number) : void {
+         this.set(this.value = "rgb(" + red + ", " + green + "," + blue + ")");
+         this.red = red;
+         this.green = green;
+         this.blue = blue;
+      }
+
+      setRgba(red : number, green : number, blue : number, alpha : number) : void {
+         this.set(this.value = "rgba(" + red + ", " + green + "," + blue + ", "+ alpha + ")");
          this.red = red;
          this.green = green;
          this.blue = blue;
          this.alpha = alpha;
-         this.type = ColorType.RGBA;
+      }
 
-         this.notifyHandlers();
+      setHsl(hue : number, saturation : number, lightness : number) : void {
+         this.set(this.value = "hsl(" + hue + ", " + saturation + "," + lightness + ")");
+         this.hue = hue;
+         this.saturation = saturation;
+         this.lightness = lightness;
+      }
+
+      setHsla(hue : number, saturation : number, lightness : number, alpha : number) : void {
+         this.set(this.value = "hsla(" + hue + ", " + saturation + "," + lightness + "," + alpha + ")");
+         this.hue = hue;
+         this.saturation = saturation;
+         this.lightness = lightness;
+         this.alpha = alpha;
       }
    }
 }
