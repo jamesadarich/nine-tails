@@ -30,3 +30,11 @@ var colorNameInput = <HTMLInputElement>document.getElementById("color-name");
       colorNameColor.set(colorNameInput.value);
    }
 }
+
+var rapidChangeResult = theme.createRule("#rapid-change-color");
+var rapidChangeColor = new NineTails.Color("rgb(0, 255, 0)");
+rapidChangeResult.linkStyle("background-color", rapidChangeColor);
+
+setInterval(function () {
+   rapidChangeColor.setRgb(Math.round(Math.random() * 255), Math.round(Math.random() * 255),Math.round(Math.random() * 255));
+}, 200);
