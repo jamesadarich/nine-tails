@@ -26,7 +26,7 @@ colorNameResult.linkStyle("background-color", colorNameColor);
 
 document.onreadystatechange = function () {
 var colorNameInput = <HTMLInputElement>document.getElementById("color-name");
-colorNameInput.oninput = function () {
-   colorNameColor.set(colorNameInput.value);
-}
+   colorNameInput.oninput = function () {
+      colorNameColor.set(colorNameInput.value);
+   }
 }
