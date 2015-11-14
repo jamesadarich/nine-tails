@@ -59,14 +59,14 @@ module NineTails {
       }
 
       setHsl(hue : number, saturation : number, lightness : number) : void {
-         this.set(this.value = "hsl(" + hue + ", " + saturation + "," + lightness + ")");
+         this.set(this.value = "hsl(" + hue + ", " + saturation + "%," + lightness + "%)");
          this.hue = hue;
          this.saturation = saturation;
          this.lightness = lightness;
       }
 
       setHsla(hue : number, saturation : number, lightness : number, alpha : number) : void {
-         this.set(this.value = "hsla(" + hue + ", " + saturation + "," + lightness + "," + alpha + ")");
+         this.set(this.value = "hsla(" + hue + ", " + saturation + "%," + lightness + "%," + alpha + ")");
          this.hue = hue;
          this.saturation = saturation;
          this.lightness = lightness;

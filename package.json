@@ -42,5 +42,8 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
     "typescript": "^1.5.3"
+  },
+  "dependencies": {
+    "node-static": "^0.7.7"
   }
 }

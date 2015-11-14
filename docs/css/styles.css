@@ -1,0 +1,116 @@
+body {
+   font-family: "Open Sans";
+   margin-top: 64px;
+}
+
+#color-name-result {
+   padding: 64px;
+}
+
+#rgb-output {
+   padding: 64px;
+}
+
+#alpha {
+   width: 100%;
+}
+
+#hidden-text {
+   padding: 64px;
+   text-align: center;
+   font-size: 2em;
+}
+
+#alpha-result {
+    position: absolute;
+    height: 176px;
+    top: 0;
+    width: 100%;
+}
+
+#alpha-container {
+    position: relative;
+    height: 176px;
+}
+
+.slider {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.slider label {
+    display: block;
+    font-weight: 600;
+}
+
+.rave-item {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0;
+}
+
+.pallette > div {
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+    height: 50px;
+}
+
+.pallette {
+   padding: 0;
+}
+
+.pallette > .main-color {
+   height: 400px;
+}
+
+.page-content {
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+input#color-name {
+    margin: 0 auto;
+    height: 28px;
+    background: transparent;
+    border: 0;
+    border-bottom: solid 4px #aaa;
+    width: 80%;
+    outline: 0;
+    color: #aaa;
+    display: block;
+    padding: 8px;
+    font-size: 2em;
+    text-align: center;
+}
+
+header {
+   height: 64px;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+}
+
+header h1 {
+   margin-top: -56px;
+   margin-left: 70px;
+   color: white;
+}
+
+#menu-button {
+   margin: 8px;
+   width: 48px;
+   padding: 0;
+   height: 48px;
+   background-color: #ffa000;
+   border: 0;
+   outline: 0;
+   cursor: pointer;
+}
+
+#menu-button img {
+   width: 100%;
+}

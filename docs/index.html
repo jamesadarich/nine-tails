@@ -5,20 +5,75 @@
   <!--script src="../js/nine-tails-dev-tools.js"></script-->
   <script src="js/nine-tails-demo.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href='css/styles.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div>
-    <h1>Nine Tails</h1>
-  </div>
-  <div>
+   <header>
+      <button type="button" id="menu-button">
+         <img src="http://nyelectricservices.com/images/bar-icon.png" />
+      </button>
+      <h1>ninetails</h1>
+   </header>
+   <div class="page-content">
+      <h2>RGB</h2>
+      <p>It's everyone's favourite color model and suprise! You can use it here</p>
+      <div id="rgb-output">
+         <div class="slider">
+            <label>red</label>
+            <input type="range" id="rgb-red" max="255" />
+         </div>
+         <div class="slider">
+            <label>green</label>
+            <input type="range" id="rgb-green" max="255" />
+         </div>
+         <div class="slider">
+            <label>blue</label>
+            <input type="range" id="rgb-blue" max="255" />
+         </div>
+      </div>
+         <h2>Alpha</h2>
+         <p>Want to see through the mess, just set that alpha!</p>
+         <input type="range" id="alpha" step="0.01" max="1" value="1"/>
+         <div id="alpha-container">
+            <div id="hidden-text">Here I am</div>
+            <div id="alpha-result"></div>
+         </div>
     <h2>Style your heart out</h2>
     <p>Switch styles regularly? Want your users to change their style easily? Previews as you go? No problemo!</p>
-  </div>
 
-  <input id="color-name" type="text" />
-  <div id="color-name-result" style="height:200px; width: 200px;"></div>
+  <div id="color-name-result">
+    <input id="color-name" type="text" value="cyan" />
+</div>
     <h2>Change it very quickly</h2>
   <p>That's no problem, let's rave!</p>
-  <div id="rapid-change-color" style="height:200px; width: 200px;"></div>
+  <div id="rave-panel"></div>
+  <div id="pallettes">
+     <h2>Pallettes</h2>
+     <div class="pallette">
+        <div class="main-color">
+           <input type="range" class="hue" max="360" />
+           <input type="range" class="saturation" max="100" />
+           <input type="range" class="lightness" max="100" />
+        </div><div class="computed-colors">
+           <div class="complimentary-color"></div>
+           <div class="split-complimentary-colors">
+              <div class="split-complimentary-color-1"></div>
+              <div class="main-color"></div>
+              <div class="split-complimentary-color-2"></div>
+           </div>
+           <div class="triad-colors">
+              <div class="triad-color-1"></div>
+              <div class="main-color"></div>
+              <div class="triad-color-2"></div>
+           </div>
+           <div class="analagous-colors">
+              <div class="analagous-color-1"></div>
+              <div class="main-color"></div>
+              <div class="analagous-color-2"></div>
+           </div>
+        </div>
+     </div>
+  </div>
+  </div>
 </body>
 </html>
