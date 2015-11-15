@@ -7,7 +7,7 @@ body {
    padding: 64px;
 }
 
-#rgb-output {
+#rgb-output, #hsl-output {
    padding: 64px;
 }
 
@@ -54,8 +54,8 @@ body {
 .pallette > div {
     width: 50%;
     display: inline-block;
-    padding: 10px;
     height: 50px;
+    text-align: center;
 }
 
 .pallette {
@@ -64,6 +64,7 @@ body {
 
 .pallette > .main-color {
    height: 400px;
+   float: left;
 }
 
 .page-content {
@@ -92,12 +93,13 @@ header {
    left: 0;
    top: 0;
    width: 100%;
+   z-index: 100;
+   box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
 }
 
 header h1 {
    margin-top: -56px;
    margin-left: 70px;
-   color: white;
 }
 
 #menu-button {
@@ -105,7 +107,7 @@ header h1 {
    width: 48px;
    padding: 0;
    height: 48px;
-   background-color: #ffa000;
+   border-radius: 4px;
    border: 0;
    outline: 0;
    cursor: pointer;
@@ -113,4 +115,68 @@ header h1 {
 
 #menu-button img {
    width: 100%;
+}
+
+.main-color input {
+    margin: 16px;
+}
+
+.split-complimentary-colors div, .triad-colors div, .analagous-colors div {
+    width: 32%;
+    display: inline-block;
+    height: 64px;
+}
+
+.complimentary-color {
+   height: 64px;
+   margin: 0 6px;
+   margin-bottom: 6px;
+}
+
+.computed-colors > div {
+   margin-top: 6px;
+}
+
+#text-color, #heading-color, #primary-color, #accent-color, #background-color {
+   padding: 16px;
+   margin: 8px;
+   border-width: 2px;
+   border-style: solid;
+}
+
+#width-example, #height-example {
+   border: 2px solid #aaa;
+   padding: 16px;
+   margin: 16px auto;
+}
+
+#height-example {
+   width: 25%;
+}
+
+ #height-example .slider {
+    width: 60%;
+}
+
+#width-example .slider, #height-example .slider {
+   margin: 0 auto;
+   display: block;
+}
+
+#spacing-example {
+   background-color: orange;
+   display: inline-block;
+   width: 100%;
+}
+
+#spacing-example-content {
+   text-align: center;
+   padding: 16px;
+   background-color: white;
+}
+
+#spacing-result {
+   border-style: solid;
+   border-color: yellow;
+   background-color: green;
 }

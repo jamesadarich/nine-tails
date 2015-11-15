@@ -2,24 +2,31 @@
 
 var theme = new NineTails.Theme();
 var ruleOne = theme.createRule("header");
-var ruleTwo = theme.createRule("h2");
+var ruleTwo = theme.createRule("h1, h2, h3");
 var ruleThree = theme.createRule("p");
+var ruleAccent = theme.createRule("#menu-button");
 var body = theme.createRule("body");
 
-var colorOne = new NineTails.Color("rgb(255, 0, 0)");
-var colorTwo = new NineTails.Color("rgb(0, 255, 0)");
-var colorThree = new NineTails.Color("rgb(0, 0, 255)");
+var primaryColor = new NineTails.Color("rgb(255, 0, 0)");
+var headingColor = new NineTails.Color("hsl(0, 50%, 0%)");
+var textColor = new NineTails.Color("rgb(0, 0, 0)");
+var accentColor = new NineTails.Color("rgb(0, 0, 0)");
 var backgroundColor = new NineTails.Color("rgb(240, 240, 240)");
+ruleAccent.linkStyle("background-color", accentColor);
 
 body.linkStyle("background-color", backgroundColor);
 
-ruleOne.linkStyle("background-color", colorOne);
-ruleTwo.linkStyle("color", colorTwo);
-ruleThree.linkStyle("color", colorThree);
+ruleOne.linkStyle("background-color", primaryColor);
+ruleTwo.linkStyle("color", headingColor);
+body.linkStyle("color", textColor);
 
 var rgbOuputResult = theme.createRule("#rgb-output");
 var rgbExampleColor = new NineTails.Color("rgb(0, 255, 255)");
 rgbOuputResult.linkStyle("background-color", rgbExampleColor);
+
+var hslOuputResult = theme.createRule("#hsl-output");
+var hslExampleColor = new NineTails.Color("rgb(0, 255, 255)");
+hslOuputResult.linkStyle("background-color", hslExampleColor);
 
 var colorNameResult = theme.createRule("#color-name-result");
 var colorNameColor = new NineTails.Color("rgb(0, 255, 255)");
@@ -81,6 +88,94 @@ var analagous2 = new NineTails.Color("rgb(0, 255, 0)");
 analagous2Rule.linkStyle("background-color", analagous2);
 
 document.onreadystatechange = function () {
+
+
+   var createHslContrastColor = function (color) {
+      var contrastColor = new NineTails.Color('');
+      contrastColor.setHsl(0, 0, 100);
+      if (color.lightness > 50) {
+         contrastColor.setHsl(0, 0, 0);
+      }
+      color.onSet(function () {
+         contrastColor.setHsl(0, 0, 100);
+         if (color.lightness > 50) {
+            contrastColor.setHsl(0, 0, 0);
+         }
+      }, contrastColor, undefined);
+
+      return contrastColor;
+   }
+
+   var setColorHslHandlers = function (color, hueInputSelector, saturationInputSelector, lightnessInpurSelector, colorIndicatorSelector) {
+      var hueInput = <HTMLInputElement>document.querySelector(hueInputSelector);
+      var saturationInput = <HTMLInputElement>document.querySelector(saturationInputSelector);
+      var lightnessInput = <HTMLInputElement>document.querySelector(lightnessInpurSelector);
+      hueInput.value = color.hue;
+      saturationInput.value = color.saturation;
+      lightnessInput.value = color.lightness;
+
+      var colorIndicator = theme.createRule(colorIndicatorSelector);
+      colorIndicator.linkStyle("background-color", color);
+
+      var updateColor = function () {
+         color.setHsl(parseInt(hueInput.value), parseInt(saturationInput.value), parseInt(lightnessInput.value));
+      }
+
+      var contrast = createHslContrastColor(color);
+      colorIndicator.linkStyle("color", contrast);
+      colorIndicator.linkStyle("border-color", contrast);
+
+      hueInput.oninput = updateColor;
+      saturationInput.oninput = updateColor;
+      lightnessInput.oninput = updateColor;
+   }
+
+   primaryColor.setHsl(0, 80, 50);
+   var primaryContrast = createHslContrastColor(primaryColor);
+   theme.createRule('header h1').linkStyle('color', primaryContrast);
+   setColorHslHandlers(primaryColor, '#primary-hue', '#primary-saturation', '#primary-lightness', '#primary-color');
+
+   accentColor.setHsl(180, 80, 50);
+   var accentContrast = createHslContrastColor(accentColor);
+   theme.createRule('header button').linkStyle('color', accentContrast);
+   setColorHslHandlers(accentColor, '#accent-hue', '#accent-saturation', '#accent-lightness', '#accent-color');
+
+   backgroundColor.setHsl(180, 0, 90);
+   setColorHslHandlers(backgroundColor, '#background-hue', '#background-saturation', '#background-lightness', '#background-color');
+
+   headingColor.setHsl(180, 0, 0);
+   setColorHslHandlers(headingColor, '#heading-hue', '#heading-saturation', '#heading-lightness', '#heading-color');
+
+   textColor.setHsl(180, 0, 0);
+   setColorHslHandlers(textColor, '#text-hue', '#text-saturation', '#text-lightness', '#text-color');
+
+   var widthExample = new NineTails.Size(50, NineTails.SizeType.Percentage);
+   var widthExampleRule = theme.createRule("#width-example");
+   widthExampleRule.linkStyle("width", widthExample);
+   var widthInput = <HTMLInputElement>document.querySelector('#width');
+   widthInput.oninput = function () { widthExample.set(parseInt(widthInput.value), NineTails.SizeType.Percentage) }
+
+      var heightExample = new NineTails.Size(200, NineTails.SizeType.Pixels);
+      var heightExampleRule = theme.createRule("#height-example");
+      heightExampleRule.linkStyle("height", heightExample);
+      var heightInput = <HTMLInputElement>document.querySelector('#height');
+      heightInput.oninput = function () { heightExample.set(parseInt(heightInput.value), NineTails.SizeType.Pixels) }
+
+         var marginExample = new NineTails.Size(8, NineTails.SizeType.Pixels);
+         var spacingExampleRule = theme.createRule("#spacing-result");
+         spacingExampleRule.linkStyle("margin", marginExample);
+         var marginInput = <HTMLInputElement>document.querySelector('#margin');
+         marginInput.oninput = function () { marginExample.set(parseInt(marginInput.value), NineTails.SizeType.Pixels) }
+
+         var borderExample = new NineTails.Size(2, NineTails.SizeType.Pixels);
+         spacingExampleRule.linkStyle("border-width", borderExample);
+         var borderInput = <HTMLInputElement>document.querySelector('#border');
+         borderInput.oninput = function () { borderExample.set(parseInt(borderInput.value), NineTails.SizeType.Pixels) }
+
+         var paddingExample = new NineTails.Size(8, NineTails.SizeType.Pixels);
+         spacingExampleRule.linkStyle("padding", paddingExample);
+         var paddingInput = <HTMLInputElement>document.querySelector('#padding');
+         paddingInput.oninput = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels) }
 
 var ravePanel = document.getElementById('rave-panel');
 for(var i = 0; i < 200; i++ ){
@@ -222,6 +317,19 @@ var updateRgbColor = function () {
 rgbRedInput.oninput = updateRgbColor;
 rgbGreenInput.oninput = updateRgbColor;
 rgbBlueInput.oninput = updateRgbColor;
+
+var hslHueInput = <HTMLInputElement>document.querySelector('#hsl-hue');
+var hslSaturationInput = <HTMLInputElement>document.querySelector('#hsl-saturation');
+var hslLightnessInput = <HTMLInputElement>document.querySelector('#hsl-lightness');
+
+var updateHslColor = function () {
+   hslExampleColor.setHsl(parseInt(hslHueInput.value), parseInt(hslSaturationInput.value), parseInt(hslLightnessInput.value));
+}
+
+
+hslHueInput.oninput = updateHslColor;
+hslSaturationInput.oninput = updateHslColor;
+hslLightnessInput.oninput = updateHslColor;
 
 var alphaInput = <HTMLInputElement>document.querySelector('#alpha');
 alphaColor.setRgba(0, 0, 0, 1);

@@ -37,9 +37,11 @@ module NineTails {
          this.green = null;
          this.blue = null;
          this.alpha = null;
+         /*
          this.hue = null;
          this.saturation = null;
          this.lightness = null;
+         */
          this.notifyHandlers();
       }
 
@@ -59,10 +61,10 @@ module NineTails {
       }
 
       setHsl(hue : number, saturation : number, lightness : number) : void {
-         this.set(this.value = "hsl(" + hue + ", " + saturation + "%," + lightness + "%)");
          this.hue = hue;
          this.saturation = saturation;
          this.lightness = lightness;
+         this.set(this.value = "hsl(" + hue + ", " + saturation + "%," + lightness + "%)");
       }
 
       setHsla(hue : number, saturation : number, lightness : number, alpha : number) : void {
