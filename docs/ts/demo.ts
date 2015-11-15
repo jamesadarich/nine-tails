@@ -177,6 +177,26 @@ document.onreadystatechange = function () {
          var paddingInput = <HTMLInputElement>document.querySelector('#padding');
          paddingInput.oninput = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels) }
 
+
+         var customStyleNameInput = <HTMLInputElement>document.querySelector('.style-name');
+         var customStyleValueInput = <HTMLInputElement>document.querySelector('.style-value');
+         var customStyleRule = theme.createRule("#custom-example");
+         var customStyle = new NineTails.Style();
+         customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
+
+         var applyCustomStyle = function () {
+            customStyle._value = customStyleValueInput.value;
+            customStyle.notifyHandlers();
+         }
+
+         var changeCustomStyle = function (e) {
+            console.log(e);
+            customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
+         }
+
+         customStyleNameInput.oninput = changeCustomStyle;
+         customStyleValueInput.oninput = applyCustomStyle;
+
 var ravePanel = document.getElementById('rave-panel');
 for(var i = 0; i < 200; i++ ){
    var raveItem = document.createElement('div');

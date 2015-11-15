@@ -3,13 +3,14 @@
 module NineTails {
   export class Style {
     public handlers: any;
+    public _value: string;
 
     public constructor () {
       this.handlers = [];
     }
 
     public get():string {
-      return '';
+      return this._value;
     }
 
     public notifyHandlers(): void {
