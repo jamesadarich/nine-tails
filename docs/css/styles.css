@@ -180,3 +180,39 @@ header h1 {
    border-color: yellow;
    background-color: green;
 }
+
+div#position-controls {
+    width: 50%;
+    float: left;
+    padding: 64px;
+    display: inline-block;
+}
+
+div#position-example {
+    width: 50%;
+    margin-left: 50%;
+    height: 200px;
+    border: solid #aaa;
+    position: relative;
+}
+
+div#moving-example {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background: red;
+}
+
+div#custom-container {
+    width: 50%;
+    margin-left: 50%;
+}
+
+div#custom-styles-panel {
+    width: 50%;
+    float: left;
+}
+
+div#custom-example {
+    padding: 16px;
+}

@@ -138,7 +138,26 @@
          </div>
       </div>
       <h2>Position</h2>
+      <div id="position-controls">
+         <div class="slider">
+            <label>x</label>
+            <input type="range" id="position-x" max="80" value="0"/>
+         </div>
+         <div class="slider">
+            <label>y</label>
+            <input type="range" id="position-y" max="80" value="0"/>
+         </div>
+      </div>
+      <div id="position-example">
+         <div id="moving-example"></div>
+      </div>
       <h2>Text</h2>
+      <h3>Font</h3>
+      <span id="font-example">Check me out in various different fonts</span>
+      <h3>Size</h3>
+      <span id="font-example">I shift my size to suit you</span>
+      <h3>Style</h3>
+      <span id="font-example">Draw the right amount of emphasis</span>
       <h2>Color</h2>
       <h3>RGB</h3>
       <p>It's everyone's favourite color model and suprise! You can use it here</p>
@@ -221,9 +240,16 @@
   </div>
   <h2>Or anything else your heart desires...</h2>
   <p>If it's in css (and supported by your target browser(s)) then you can use NineTails.js to work with it</p>
-  <input type="text" class="style-name" />
-  <input type="text" class="style-value" />
-  <div id="custom-example"></div>
+  <div id="custom-example">
+     <div id="custom-styles-panel">
+        <div id="custom-styles">
+        </div>
+        <button type="button" id="add-custom-style">Add</button>
+     </div>
+     <div id="custom-container">
+        <div id="custom-example-result"></div>
+     </div>
+  </div>
   </div>
 </body>
 </html>

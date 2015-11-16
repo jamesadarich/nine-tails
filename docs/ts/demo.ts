@@ -177,25 +177,38 @@ document.onreadystatechange = function () {
          var paddingInput = <HTMLInputElement>document.querySelector('#padding');
          paddingInput.oninput = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels) }
 
+         var addCustomStyle = function () {
 
-         var customStyleNameInput = <HTMLInputElement>document.querySelector('.style-name');
-         var customStyleValueInput = <HTMLInputElement>document.querySelector('.style-value');
-         var customStyleRule = theme.createRule("#custom-example");
-         var customStyle = new NineTails.Style();
-         customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
+            var customStyleContainer = document.createElement('div');
+            var customStyleNameInput = <HTMLInputElement>document.createElement('input');
+            customStyleNameInput.type = "text";
+            var customStyleValueInput = <HTMLInputElement>document.createElement('input');
+            customStyleValueInput.type = "text";
+            document.getElementById('custom-styles').appendChild(customStyleContainer);
+            customStyleContainer.appendChild(customStyleNameInput);
+            customStyleContainer.appendChild(customStyleValueInput);
 
-         var applyCustomStyle = function () {
-            customStyle._value = customStyleValueInput.value;
-            customStyle.notifyHandlers();
-         }
-
-         var changeCustomStyle = function (e) {
-            console.log(e);
+            var customStyleRule = theme.createRule("#custom-example-result");
+            var customStyle = new NineTails.Style();
             customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
+
+            var applyCustomStyle = function () {
+               customStyle._value = customStyleValueInput.value;
+               customStyle.notifyHandlers();
+            }
+
+            var changeCustomStyle = function (e) {
+               console.log(e);
+               customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
+            }
+
+            customStyleNameInput.oninput = changeCustomStyle;
+            customStyleValueInput.oninput = applyCustomStyle;
          }
 
-         customStyleNameInput.oninput = changeCustomStyle;
-         customStyleValueInput.oninput = applyCustomStyle;
+         var addCustomStyleButton = <HTMLButtonElement>document.querySelector('#add-custom-style');
+
+         addCustomStyleButton.onclick = addCustomStyle;
 
 var ravePanel = document.getElementById('rave-panel');
 for(var i = 0; i < 200; i++ ){
