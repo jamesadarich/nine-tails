@@ -177,6 +177,64 @@ document.onreadystatechange = function () {
          var paddingInput = <HTMLInputElement>document.querySelector('#padding');
          paddingInput.oninput = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels) }
 
+         // ****************** TEXT ************************
+
+         var fontInput = <HTMLSelectElement>document.querySelector('#font-select');
+         var fontExample = new NineTails.Style();
+         var fontRule = theme.createRule("#font-example");
+         fontRule.linkStyle("font-family", fontExample);
+         fontInput.onchange = function () {
+         fontExample._value = fontInput.children[fontInput.selectedIndex].textContent;
+         fontExample.notifyHandlers(); };
+
+         var textSizeInput = <HTMLInputElement>document.querySelector('#text-size');
+         var textSizeExample = new NineTails.Size(parseInt(textSizeInput.value), NineTails.SizeType.Pixels);
+         var textSizeRule = theme.createRule("#text-size-example");
+         textSizeRule.linkStyle("font-size", textSizeExample);
+         textSizeInput.oninput = function () { textSizeExample.set(parseInt(textSizeInput.value), NineTails.SizeType.Pixels) }
+
+         var textBoldInput = <HTMLInputElement>document.querySelector('#text-bold');
+         var textBoldExample = new NineTails.Style();
+         var textStyleRule = theme.createRule("#text-style-example");
+         textStyleRule.linkStyle("font-weight", textBoldExample);
+         textBoldInput.onchange = function () { if (textBoldInput.checked) {
+            textBoldExample._value = 'bold';
+         }
+         else {
+            textBoldExample._value = 'normal';
+         }
+         textBoldExample.notifyHandlers(); };
+
+         var textItalicInput = <HTMLInputElement>document.querySelector('#text-italic');
+         var textItalicExample = new NineTails.Style();
+         textStyleRule.linkStyle("font-style", textItalicExample);
+         textItalicInput.onchange = function () { if (textItalicInput.checked) {
+            textItalicExample._value = 'italic';
+         }
+         else {
+            textItalicExample._value = 'normal';
+         }
+         textItalicExample.notifyHandlers(); };
+
+
+
+         // ****************** POSITIONING *****************
+
+
+         var xaxisExample = new NineTails.Size(0, NineTails.SizeType.Percentage);
+         var positionRule = theme.createRule("#moving-example");
+         positionRule.linkStyle("left", xaxisExample);
+         var xaxisInput = <HTMLInputElement>document.querySelector('#position-x');
+         xaxisInput.oninput = function () { xaxisExample.set(parseInt(xaxisInput.value), NineTails.SizeType.Percentage) }
+
+         var yaxisExample = new NineTails.Size(0, NineTails.SizeType.Pixels);
+         positionRule.linkStyle("top", yaxisExample);
+         var yaxisInput = <HTMLInputElement>document.querySelector('#position-y');
+         yaxisInput.oninput = function () { yaxisExample.set(parseInt(yaxisInput.value), NineTails.SizeType.Pixels) }
+
+
+         // ******************* CUSTOM *********************
+
          var addCustomStyle = function () {
 
             var customStyleContainer = document.createElement('div');
