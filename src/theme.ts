@@ -40,7 +40,11 @@ module NineTails {
     }
 
     createRule(selector: string) : Rule {
+    if (this.styleSheet.insertRule) {
+    this.styleSheet.insertRule(selector + ' { }', 0);
+    }else {
       this.styleSheet.addRule(selector);
+      }
 
       for (var i = 0; i < this.styleSheet.cssRules.length; i++) {
         var rule = <CSSStyleRule>this.styleSheet.cssRules[i];

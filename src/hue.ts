@@ -13,10 +13,10 @@ module NineTails {
 
       if (contrastColor === undefined) {
         if ((this.color.red + this.color.green + this.color.blue) > 382) {
-          this.contrastColor = new Color(0, 0, 0, 1);
+          //this.contrastColor = new Color(0, 0, 0, 1);
         }
         else {
-          this.contrastColor = new Color(255, 255, 255, 1);
+          //this.contrastColor = new Color(255, 255, 255, 1);
         }
       }
     }

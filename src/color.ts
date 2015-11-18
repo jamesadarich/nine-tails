@@ -46,7 +46,8 @@ module NineTails {
       }
 
       setRgb(red : number, green : number, blue : number) : void {
-         this.set(this.value = "rgb(" + red + ", " + green + "," + blue + ")");
+         //this.set(this.value = "rgb(" + red + ", " + green + "," + blue + ")");
+         this.set('#' + red.toString(16) + green.toString(16)+ blue.toString(16));
          this.red = red;
          this.green = green;
          this.blue = blue;
