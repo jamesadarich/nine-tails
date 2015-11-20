@@ -2,13 +2,14 @@
 
 var theme = new NineTails.Theme();
 var ruleOne = theme.createRule("header");
-var ruleTwo = theme.createRule("h1, h2, h3");
+//var ruleTwo = theme.createRule("h1, h2, h3");
+var ruleTwo = theme.createRule("H1");
 var ruleThree = theme.createRule("p");
 var ruleAccent = theme.createRule("#menu-button");
-var body = theme.createRule("body");
+var body = theme.createRule("BODY");
 
 var primaryColor = new NineTails.Color("rgb(255, 0, 0)");
-var headingColor = new NineTails.Color("hsl(0, 50%, 0%)");
+var headingColor = new NineTails.Color("rgb(0, 0, 0)");
 var textColor = new NineTails.Color("rgb(0, 0, 0)");
 var accentColor = new NineTails.Color("rgb(0, 0, 0)");
 var backgroundColor = new NineTails.Color("rgb(240, 240, 240)");

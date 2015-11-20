@@ -65,7 +65,8 @@ module NineTails {
          this.hue = hue;
          this.saturation = saturation;
          this.lightness = lightness;
-         this.set(this.value = "hsl(" + hue + ", " + saturation + "%," + lightness + "%)");
+         //this.set(this.value = "hsl(" + hue + ", " + saturation + "%," + lightness + "%)");
+         this.set('red');
       }
 
       setHsla(hue : number, saturation : number, lightness : number, alpha : number) : void {
