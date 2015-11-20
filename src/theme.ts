@@ -41,21 +41,26 @@ module NineTails {
     }
 
     createRule(selector: string) : Rule {
+      var ruleIndex = 0;
     if (this.styleSheet.insertRule) {
-    this.styleSheet.insertRule(selector + ' { }', 0);
+       ruleIndex = this.styleSheet.insertRule(selector + ' { }', 0);
     }else {
-      this.styleSheet.addRule(selector);
+       ruleIndex = this.styleSheet.addRule(selector);
       }
 
-      var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
 
-      for (var i = 0; i < cssRules.length; i++) {
+      var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
+      /*if (selector.charAt(0) !== '.' && selector.charAt(0) !== '#') {
+        selector = selector.toLowerCase();
+      }*/
+      return new NineTails.Rule(<CSSStyleRule>cssRules[0]);
+      /*for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
-        if (rule.selectorText === selector) {
+        if (rule.selectorText.toLowerCase() === selector) {
           //need to keep the reference to module whilst this isn"t compiling correctly
           return new NineTails.Rule(rule);
         }
-      }
+      }*/
     }
   }
 }

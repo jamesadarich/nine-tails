@@ -34,5 +34,8 @@
         "./size.ts",
         "./style.ts",
         "./theme.ts"
-    ]
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }

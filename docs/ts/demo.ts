@@ -34,12 +34,14 @@ var colorNameColor = new NineTails.Color("rgb(0, 255, 255)");
 colorNameResult.linkStyle("background-color", colorNameColor);
 
 var alphaResult = theme.createRule("#alpha-result");
-var alphaColor = new NineTails.Color("rgba(0, 0, 0, 1.0)");
+//var alphaColor = new NineTails.Color("rgba(0, 0, 0, 1.0)");
+var alphaColor = new NineTails.Color("rgb(0, 0, 0)");
 alphaResult.linkStyle("background-color", alphaColor);
 
 var raveColors = [];
 
 for (var i = 1; i <= 20; i++) {
+
    var rapidChangeResult = theme.createRule(".rave-item-" + i);
    var rapidChangeColor = new NineTails.Color("rgb(0, 255, 0)");
    rapidChangeResult.linkStyle("background-color", rapidChangeColor);
@@ -88,7 +90,8 @@ var analagous2Rule = theme.createRule(".pallette .computed-colors .analagous-col
 var analagous2 = new NineTails.Color("rgb(0, 255, 0)");
 analagous2Rule.linkStyle("background-color", analagous2);
 
-document.addEventListener("DOMContentLoaded", function(event) {
+//var addEvent = document.addEventListener || document.attachEvent;
+//addEvent("DOMContentLoaded", function(event) {
 
 
    var createHslContrastColor = function (color) {
@@ -440,7 +443,7 @@ var updateAlphaColor = function () {
 alphaInput.onchange = updateAlphaColor;
 
 
-});
+//});
 
 var hslToRgb = function(hsl) {
    var h = hsl.h, s = hsl.s, l = hsl.l;
