@@ -13,12 +13,24 @@ module NineTails {
     public linkStyle(styleName : string, style : Style): void {
       style.onSet(this.setStyle, this, styleName);
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-      this.cssRule.style[styleName] = style.get();
+      try {
+        this.cssRule.style[styleName] = style.get();
+
+      }
+      catch (e) {
+
+      }
     }
 
     private setStyle(update, styleName : string): void {
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-      this.cssRule.style[styleName] = update.newValue;
+      try {
+        this.cssRule.style[styleName] = update.newValue;
+
+      }
+      catch (e) {
+
+      }
     }
   }
 }
