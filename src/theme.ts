@@ -15,7 +15,7 @@ module NineTails {
       styleElement.title = "nine-tails";
       styleElement.className = "nine-tails-theme";
       //document.head.appendChild(styleElement);
-      document.querySelector('head').appendChild(styleElement);
+      document.querySelector("head").appendChild(styleElement);
 
       this.styleSheet = <CSSStyleSheet>styleElement.sheet || <CSSStyleSheet>styleElement.styleSheet;
 
@@ -42,18 +42,27 @@ module NineTails {
 
     createRule(selector: string) : Rule {
       var ruleIndex = 0;
+         var selectors = selector.split(" ");
+         for(var i = 0; i < selectors.length; i++) {
+            if (selectors[i].charAt(0) !== "." && selectors[i].charAt(0) !== "#") {
+               selectors[i] = selectors[i].toUpperCase();
+            }
+         }
+
+         selector = selectors.join(' ');
+
     if (this.styleSheet.insertRule) {
-       ruleIndex = this.styleSheet.insertRule(selector + ' { }', 0);
+       ruleIndex = this.styleSheet.insertRule(selector + " { }", 0);
     }else {
        ruleIndex = this.styleSheet.addRule(selector);
       }
 
 
       var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
-      /*if (selector.charAt(0) !== '.' && selector.charAt(0) !== '#') {
+      /*if (selector.charAt(0) !== "." && selector.charAt(0) !== "#") {
         selector = selector.toLowerCase();
       }*/
-      return new NineTails.Rule(<CSSStyleRule>cssRules[0]);
+      return new NineTails.Rule(<CSSStyleRule>cssRules[ruleIndex]);
       /*for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
         if (rule.selectorText.toLowerCase() === selector) {

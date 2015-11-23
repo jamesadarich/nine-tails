@@ -47,7 +47,7 @@ module NineTails {
 
       setRgb(red : number, green : number, blue : number) : void {
          //this.set(this.value = "rgb(" + red + ", " + green + "," + blue + ")");
-         //this.set('#' + red.toString(16) + green.toString(16)+ blue.toString(16));
+         //this.set("#" + red.toString(16) + green.toString(16)+ blue.toString(16));
          this.red = red;
          this.green = green;
          this.blue = blue;
@@ -55,12 +55,12 @@ module NineTails {
       }
 
       setRgba(red : number, green : number, blue : number, alpha : number) : void {
-         //this.set(this.value = "rgba(" + red + ", " + green + "," + blue + ", "+ alpha + ")");
+         this.set(this.value = "rgba(" + red + ", " + green + "," + blue + ", "+ alpha + ")");
          this.red = red;
          this.green = green;
          this.blue = blue;
          this.alpha = alpha;
-           this.set(this._getHexValue());
+           //this.set(this._getHexValue());
       }
 
       setHsl(hue : number, saturation : number, lightness : number) : void {
@@ -88,13 +88,13 @@ module NineTails {
       }
 
       private _getHexValue() {
-        return '#' + this._getHexFromColor(this.red) + this._getHexFromColor(this.green)+ this._getHexFromColor(this.blue);
+        return "#" + this._getHexFromColor(this.red) + this._getHexFromColor(this.green)+ this._getHexFromColor(this.blue);
       }
 
       private _getHexFromColor(numberColor: number): string {
         var hexString = numberColor.toString(16);
         if (hexString.length === 1) {
-          return '0' + hexString;
+          return "0" + hexString;
         }
         return hexString;
       }
