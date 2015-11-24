@@ -17,10 +17,10 @@ module NineTails {
       //document.head.appendChild(styleElement);
       document.querySelector("head").appendChild(styleElement);
 
-      this.styleSheet = <CSSStyleSheet>styleElement.sheet || <CSSStyleSheet>styleElement.styleSheet;
+      this.styleSheet = <CSSStyleSheet>document.styleSheets[document.styleSheets.length -1];//<CSSStyleSheet>styleElement.sheet || <CSSStyleSheet>styleElement.styleSheet;
 
       //change this to create class that extends CSSStyleSheet
-      styleElement["theme"] = this;
+      (<any>styleElement)["theme"] = this;
 
       //this.colors = [];
       this.sizes = [];
@@ -32,13 +32,13 @@ module NineTails {
       this.colors.push(color);
       return color;
     }
-    */
 
     createSize(value: number, type: SizeType): Size {
       var size = new Size(value, type);
       this.sizes.push(size);
       return size;
     }
+    */
 
     createRule(selector: string) : Rule {
       var ruleIndex = 0;

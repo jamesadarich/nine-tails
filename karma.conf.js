@@ -47,8 +47,8 @@ module.exports = function(config) {
       coverageReporter: {
          reporters: [{
 
-           type : 'html',
-         dir : 'test/coverage/'
+           type : 'text',//'html',
+           dir : 'test/coverage/'
          }]
      },
 
@@ -71,7 +71,7 @@ module.exports = function(config) {
 
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: ['Chrome'/*'PhantomJS'*//*, 'Chrome'/*, 'IE'*/],
+      browsers: [/*'Chrome'*/'PhantomJS'/*, 'Chrome'/*, 'IE'*/],
 
 
       // Continuous Integration mode

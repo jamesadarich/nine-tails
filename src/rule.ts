@@ -14,7 +14,7 @@ module NineTails {
       style.onSet(this.setStyle, this, styleName);
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
-        this.cssRule.style[styleName] = style.get();
+        (<any>this.cssRule.style)[styleName] = style.get();
 
       }
       catch (e) {
@@ -22,10 +22,10 @@ module NineTails {
       }
     }
 
-    private setStyle(update, styleName : string): void {
+    private setStyle(update: any, styleName : string): void {
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
-        this.cssRule.style[styleName] = update.newValue;
+        (<any>this.cssRule.style)[styleName] = update.newValue;
 
       }
       catch (e) {

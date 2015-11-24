@@ -3,7 +3,7 @@
         "target": "es3",
         "module": "amd",
         "declaration": true,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,

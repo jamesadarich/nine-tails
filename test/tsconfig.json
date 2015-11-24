@@ -3,7 +3,7 @@
         "target": "es5",
         "module": "amd",
         "declaration": false,
-        "noImplicitAny": false,
+        "noImplicitAny": true,
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
@@ -27,5 +27,8 @@
         "./size.spec.ts",
         "./style.spec.ts",
         "./theme.spec.ts"
-    ]
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }

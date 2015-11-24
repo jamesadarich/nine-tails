@@ -40,7 +40,7 @@ describe('Rule', function() {
 
          rule.linkStyle('derelict', style);
 
-         expect(zoolander.style['derelict']).toBe('blue steel');
+         expect((<any>zoolander.style).derelict).toBe('blue steel');
       });
 
       it('should update the style when it is set', function () {
@@ -66,7 +66,7 @@ describe('Rule', function() {
 
          (<jasmine.Spy>(style.onSet)).calls.mostRecent().args[0].call(rule, update, 'derelict');
 
-         expect(zoolander.style['derelict']).toBe('the tigre');
+         expect((<any>zoolander.style)).toBe('the tigre');
       });
    });
 });
