@@ -29,7 +29,6 @@
   "homepage": "https://github.com/jamesrichford/nine-tails",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-karma": "0.0.4",
     "gulp-typescript": "^2.8.1",
     "jasmine": "^2.3.2",
     "jasmine-core": "^2.3.4",
