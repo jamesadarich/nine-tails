@@ -28,6 +28,21 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "b2d17b5dad042e293e77d09f2a30d281325cb606"
+    },
+    "backbone/backbone.d.ts": {
+      "commit": "e48f0c7a0a5f9e9d35e9cfd7506461bab435cb49"
+    },
+    "marionette/marionette.d.ts": {
+      "commit": "e48f0c7a0a5f9e9d35e9cfd7506461bab435cb49"
+    },
+    "underscore/underscore.d.ts": {
+      "commit": "e48f0c7a0a5f9e9d35e9cfd7506461bab435cb49"
+    },
+    "backbone/backbone-global.d.ts": {
+      "commit": "e48f0c7a0a5f9e9d35e9cfd7506461bab435cb49"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "e48f0c7a0a5f9e9d35e9cfd7506461bab435cb49"
     }
   }
 }

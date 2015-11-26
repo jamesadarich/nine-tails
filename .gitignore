@@ -11,3 +11,7 @@ typings
 # test files
 /test/**/*.spec.js
 /test/coverage
+
+#site files
+/site/css
+/site/js
