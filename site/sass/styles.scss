@@ -1,0 +1,218 @@
+body {
+   font-family: "Open Sans";
+   margin-top: 64px;
+}
+
+#color-name-result {
+   padding: 64px;
+}
+
+#rgb-output, #hsl-output {
+   padding: 64px;
+}
+
+#alpha {
+   width: 100%;
+}
+
+#hidden-text {
+   padding: 64px;
+   text-align: center;
+   font-size: 2em;
+}
+
+#alpha-result {
+    position: absolute;
+    height: 176px;
+    top: 0;
+    width: 100%;
+}
+
+#alpha-container {
+    position: relative;
+    height: 176px;
+}
+
+.slider {
+    width: 33%;
+    display: inline-block;
+    text-align: center;
+}
+
+.slider label {
+    display: block;
+    font-weight: 600;
+}
+
+.rave-item {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0;
+}
+
+.pallette > div {
+    width: 50%;
+    display: inline-block;
+    height: 50px;
+    text-align: center;
+}
+
+.pallette {
+   padding: 0;
+}
+
+.pallette > .main-color {
+   height: 400px;
+   float: left;
+}
+
+.page-content {
+   max-width: 1000px;
+   margin: 0 auto;
+}
+
+input#color-name {
+    margin: 0 auto;
+    height: 28px;
+    background: transparent;
+    border: 0;
+    border-bottom: solid 4px #aaa;
+    width: 80%;
+    outline: 0;
+    color: #aaa;
+    display: block;
+    padding: 8px;
+    font-size: 2em;
+    text-align: center;
+}
+
+header {
+   height: 64px;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   z-index: 100;
+   box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+}
+
+header h1 {
+   margin-top: -56px;
+   margin-left: 70px;
+}
+
+#menu-button {
+   margin: 8px;
+   width: 48px;
+   padding: 0;
+   height: 48px;
+   border-radius: 4px;
+   border: 0;
+   outline: 0;
+   cursor: pointer;
+}
+
+#menu-button img {
+   width: 100%;
+}
+
+.main-color input {
+    margin: 16px;
+}
+
+.split-complimentary-colors div, .triad-colors div, .analagous-colors div {
+    width: 32%;
+    display: inline-block;
+    height: 64px;
+}
+
+.complimentary-color {
+   height: 64px;
+   margin: 0 6px;
+   margin-bottom: 6px;
+}
+
+.computed-colors > div {
+   margin-top: 6px;
+}
+
+#text-color, #heading-color, #primary-color, #accent-color, #background-color {
+   padding: 16px;
+   margin: 8px;
+   border-width: 2px;
+   border-style: solid;
+}
+
+#width-example, #height-example {
+   border: 2px solid #aaa;
+   padding: 16px;
+   margin: 16px auto;
+}
+
+#height-example {
+   width: 25%;
+}
+
+ #height-example .slider {
+    width: 60%;
+}
+
+#width-example .slider, #height-example .slider {
+   margin: 0 auto;
+   display: block;
+}
+
+#spacing-example {
+   background-color: orange;
+   display: inline-block;
+   width: 100%;
+}
+
+#spacing-example-content {
+   text-align: center;
+   padding: 16px;
+   background-color: white;
+}
+
+#spacing-result {
+   border-style: solid;
+   border-color: yellow;
+   background-color: green;
+}
+
+div#position-controls {
+    width: 50%;
+    float: left;
+    padding: 64px;
+    display: inline-block;
+}
+
+div#position-example {
+    width: 50%;
+    margin-left: 50%;
+    height: 400px;
+    border: solid #aaa;
+    position: relative;
+}
+
+div#moving-example {
+    position: absolute;
+    height: 50px;
+    width: 10%;
+    background: red;
+}
+
+div#custom-container {
+    width: 50%;
+    margin-left: 50%;
+}
+
+div#custom-styles-panel {
+    width: 50%;
+    float: left;
+}
+
+div#custom-example {
+    padding: 16px;
+}

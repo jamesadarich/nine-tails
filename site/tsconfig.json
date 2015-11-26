@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "es3",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "out": "./js/nine-tails-demo.js",
+        "outDir": "./js",
+        "sourceMap": true
+    },
+    "buildOnSave": true,
+    "compileOnSave": true,
+    "filesGlob": [
+        "./**/*.ts",
+        "!../node_modules/**/*.ts",
+        "!../src/**/*.ts"
+    ],
+    "files": [
+        "./ts/demo.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
