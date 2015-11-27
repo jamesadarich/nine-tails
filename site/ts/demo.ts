@@ -38,7 +38,7 @@ var alphaResult = theme.createRule("#alpha-result");
 var alphaColor = new NineTails.Color("rgb(0, 0, 0)");
 alphaResult.linkStyle("background-color", alphaColor);
 
-var raveColors = [];
+var raveColors: any [] = [];
 
 for (var i = 1; i <= 20; i++) {
 
@@ -94,8 +94,8 @@ analagous2Rule.linkStyle("background-color", analagous2);
 //addEvent("DOMContentLoaded", function(event) {
 
 
-   var createHslContrastColor = function (color) {
-      var contrastColor = new NineTails.Color('');
+   var createHslContrastColor = function (color: any) {
+      var contrastColor = new NineTails.Color("");
       contrastColor.setHsl(0, 0, 100);
       if (color.lightness > 50) {
          contrastColor.setHsl(0, 0, 0);
@@ -108,9 +108,9 @@ analagous2Rule.linkStyle("background-color", analagous2);
       }, contrastColor, undefined);
 
       return contrastColor;
-   }
+   };
 
-   var setColorHslHandlers = function (color, hueInputSelector, saturationchangeSelector, lightnessInpurSelector, colorIndicatorSelector) {
+   var setColorHslHandlers = function (color: any, hueInputSelector: any, saturationchangeSelector: any, lightnessInpurSelector: any, colorIndicatorSelector: any) {
       var hueInput = <HTMLInputElement>document.documentElement.querySelector(hueInputSelector);
       var saturationchange = <HTMLInputElement>document.documentElement.querySelector(saturationchangeSelector);
       var lightnessInput = <HTMLInputElement>document.documentElement.querySelector(lightnessInpurSelector);
@@ -123,7 +123,7 @@ analagous2Rule.linkStyle("background-color", analagous2);
 
       var updateColor = function () {
          color.setHsl(parseInt(hueInput.value), parseInt(saturationchange.value), parseInt(lightnessInput.value));
-      }
+      };;
 
       var contrast = createHslContrastColor(color);
       colorIndicator.linkStyle("color", contrast);
@@ -136,58 +136,58 @@ analagous2Rule.linkStyle("background-color", analagous2);
       hueInput.oninput = updateColor;
       saturationchange.oninput = updateColor;
       lightnessInput.oninput = updateColor;
-   }
+   };
 
    primaryColor.setHsl(0, 80, 50);
    var primaryContrast = createHslContrastColor(primaryColor);
-   theme.createRule('header h1').linkStyle('color', primaryContrast);
-   setColorHslHandlers(primaryColor, '#primary-hue', '#primary-saturation', '#primary-lightness', '#primary-color');
+   theme.createRule("header h1").linkStyle("color", primaryContrast);
+   setColorHslHandlers(primaryColor, "#primary-hue", "#primary-saturation", "#primary-lightness", "#primary-color");
 
    accentColor.setHsl(180, 80, 50);
    var accentContrast = createHslContrastColor(accentColor);
-   theme.createRule('header button').linkStyle('color', accentContrast);
-   setColorHslHandlers(accentColor, '#accent-hue', '#accent-saturation', '#accent-lightness', '#accent-color');
+   theme.createRule("header button").linkStyle("color", accentContrast);
+   setColorHslHandlers(accentColor, "#accent-hue", "#accent-saturation", "#accent-lightness", "#accent-color");
 
    backgroundColor.setHsl(180, 0, 90);
-   setColorHslHandlers(backgroundColor, '#background-hue', '#background-saturation', '#background-lightness', '#background-color');
+   setColorHslHandlers(backgroundColor, "#background-hue", "#background-saturation", "#background-lightness", "#background-color");
 
    headingColor.setHsl(180, 0, 0);
-   setColorHslHandlers(headingColor, '#heading-hue', '#heading-saturation', '#heading-lightness', '#heading-color');
+   setColorHslHandlers(headingColor, "#heading-hue", "#heading-saturation", "#heading-lightness", "#heading-color");
 
    textColor.setHsl(180, 0, 0);
-   setColorHslHandlers(textColor, '#text-hue', '#text-saturation', '#text-lightness', '#text-color');
+   setColorHslHandlers(textColor, "#text-hue", "#text-saturation", "#text-lightness", "#text-color");
 
    var widthExample = new NineTails.Size(50, NineTails.SizeType.Percentage);
    var widthExampleRule = theme.createRule("#width-example");
    widthExampleRule.linkStyle("width", widthExample);
-   var widthInput = <HTMLInputElement>document.documentElement.querySelector('#width');
-   widthInput.onchange = function () { widthExample.set(parseInt(widthInput.value), NineTails.SizeType.Percentage) }
+   var widthInput = <HTMLInputElement>document.documentElement.querySelector("#width");
+   widthInput.onchange = function () { widthExample.set(parseInt(widthInput.value), NineTails.SizeType.Percentage); };
 
       var heightExample = new NineTails.Size(200, NineTails.SizeType.Pixels);
       var heightExampleRule = theme.createRule("#height-example");
       heightExampleRule.linkStyle("height", heightExample);
-      var heightInput = <HTMLInputElement>document.documentElement.querySelector('#height');
-      heightInput.onchange = function () { heightExample.set(parseInt(heightInput.value), NineTails.SizeType.Pixels) }
+      var heightInput = <HTMLInputElement>document.documentElement.querySelector("#height");
+      heightInput.onchange = function () { heightExample.set(parseInt(heightInput.value), NineTails.SizeType.Pixels); };
 
          var marginExample = new NineTails.Size(8, NineTails.SizeType.Pixels);
          var spacingExampleRule = theme.createRule("#spacing-result");
          spacingExampleRule.linkStyle("margin", marginExample);
-         var marginInput = <HTMLInputElement>document.documentElement.querySelector('#margin');
-         marginInput.onchange = function () { marginExample.set(parseInt(marginInput.value), NineTails.SizeType.Pixels) }
+         var marginInput = <HTMLInputElement>document.documentElement.querySelector("#margin");
+         marginInput.onchange = function () { marginExample.set(parseInt(marginInput.value), NineTails.SizeType.Pixels); };
 
          var borderExample = new NineTails.Size(2, NineTails.SizeType.Pixels);
          spacingExampleRule.linkStyle("border-width", borderExample);
-         var borderInput = <HTMLInputElement>document.documentElement.querySelector('#border');
-         borderInput.onchange = function () { borderExample.set(parseInt(borderInput.value), NineTails.SizeType.Pixels) }
+         var borderInput = <HTMLInputElement>document.documentElement.querySelector("#border");
+         borderInput.onchange = function () { borderExample.set(parseInt(borderInput.value), NineTails.SizeType.Pixels); };
 
          var paddingExample = new NineTails.Size(8, NineTails.SizeType.Pixels);
          spacingExampleRule.linkStyle("padding", paddingExample);
-         var paddingInput = <HTMLInputElement>document.documentElement.querySelector('#padding');
-         paddingInput.onchange = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels) }
+         var paddingInput = <HTMLInputElement>document.documentElement.querySelector("#padding");
+         paddingInput.onchange = function () { paddingExample.set(parseInt(paddingInput.value), NineTails.SizeType.Pixels); };
 
          // ****************** TEXT ************************
 
-         var fontInput = <HTMLSelectElement>document.documentElement.querySelector('#font-select');
+         var fontInput = <HTMLSelectElement>document.documentElement.querySelector("#font-select");
          var fontExample = new NineTails.Style();
          var fontRule = theme.createRule("#font-example");
          fontRule.linkStyle("font-family", fontExample);
@@ -195,32 +195,32 @@ analagous2Rule.linkStyle("background-color", analagous2);
          fontExample._value = fontInput.children[fontInput.selectedIndex].textContent;
          fontExample.notifyHandlers(); };
 
-         var textSizeInput = <HTMLInputElement>document.documentElement.querySelector('#text-size');
+         var textSizeInput = <HTMLInputElement>document.documentElement.querySelector("#text-size");
          var textSizeExample = new NineTails.Size(parseInt(textSizeInput.value), NineTails.SizeType.Pixels);
          var textSizeRule = theme.createRule("#text-size-example");
          textSizeRule.linkStyle("font-size", textSizeExample);
-         textSizeInput.onchange = function () { textSizeExample.set(parseInt(textSizeInput.value), NineTails.SizeType.Pixels) }
+         textSizeInput.onchange = function () { textSizeExample.set(parseInt(textSizeInput.value), NineTails.SizeType.Pixels); };
 
-         var textBoldInput = <HTMLInputElement>document.documentElement.querySelector('#text-bold');
+         var textBoldInput = <HTMLInputElement>document.documentElement.querySelector("#text-bold");
          var textBoldExample = new NineTails.Style();
          var textStyleRule = theme.createRule("#text-style-example");
          textStyleRule.linkStyle("font-weight", textBoldExample);
          textBoldInput.onchange = function () { if (textBoldInput.checked) {
-            textBoldExample._value = 'bold';
+            textBoldExample._value = "bold";
          }
          else {
-            textBoldExample._value = 'normal';
+            textBoldExample._value = "normal";
          }
          textBoldExample.notifyHandlers(); };
 
-         var textItalicInput = <HTMLInputElement>document.documentElement.querySelector('#text-italic');
+         var textItalicInput = <HTMLInputElement>document.documentElement.querySelector("#text-italic");
          var textItalicExample = new NineTails.Style();
          textStyleRule.linkStyle("font-style", textItalicExample);
          textItalicInput.onchange = function () { if (textItalicInput.checked) {
-            textItalicExample._value = 'italic';
+            textItalicExample._value = "italic";
          }
          else {
-            textItalicExample._value = 'normal';
+            textItalicExample._value = "normal";
          }
          textItalicExample.notifyHandlers(); };
 
@@ -232,25 +232,25 @@ analagous2Rule.linkStyle("background-color", analagous2);
          var xaxisExample = new NineTails.Size(0, NineTails.SizeType.Percentage);
          var positionRule = theme.createRule("#moving-example");
          positionRule.linkStyle("left", xaxisExample);
-         var xaxisInput = <HTMLInputElement>document.documentElement.querySelector('#position-x');
-         xaxisInput.onchange = function () { xaxisExample.set(parseInt(xaxisInput.value), NineTails.SizeType.Percentage) }
+         var xaxisInput = <HTMLInputElement>document.documentElement.querySelector("#position-x");
+         xaxisInput.onchange = function () { xaxisExample.set(parseInt(xaxisInput.value), NineTails.SizeType.Percentage); };
 
          var yaxisExample = new NineTails.Size(0, NineTails.SizeType.Pixels);
          positionRule.linkStyle("top", yaxisExample);
-         var yaxisInput = <HTMLInputElement>document.documentElement.querySelector('#position-y');
-         yaxisInput.onchange = function () { yaxisExample.set(parseInt(yaxisInput.value), NineTails.SizeType.Pixels) }
+         var yaxisInput = <HTMLInputElement>document.documentElement.querySelector("#position-y");
+         yaxisInput.onchange = function () { yaxisExample.set(parseInt(yaxisInput.value), NineTails.SizeType.Pixels); };
 
 
          // ******************* CUSTOM *********************
 
          var addCustomStyle = function () {
 
-            var customStyleContainer = document.createElement('div');
-            var customStyleNameInput = <HTMLInputElement>document.createElement('input');
+            var customStyleContainer = document.createElement("div");
+            var customStyleNameInput = <HTMLInputElement>document.createElement("input");
             customStyleNameInput.type = "text";
-            var customStyleValueInput = <HTMLInputElement>document.createElement('input');
+            var customStyleValueInput = <HTMLInputElement>document.createElement("input");
             customStyleValueInput.type = "text";
-            document.getElementById('custom-styles').appendChild(customStyleContainer);
+            document.getElementById("custom-styles").appendChild(customStyleContainer);
             customStyleContainer.appendChild(customStyleNameInput);
             customStyleContainer.appendChild(customStyleValueInput);
 
@@ -261,35 +261,35 @@ analagous2Rule.linkStyle("background-color", analagous2);
             var applyCustomStyle = function () {
                customStyle._value = customStyleValueInput.value;
                customStyle.notifyHandlers();
-            }
+            };
 
-            var changeCustomStyle = function (e) {
+            var changeCustomStyle = function (e: any) {
                console.log(e);
                customStyleRule.linkStyle(customStyleNameInput.value, customStyle);
-            }
+            };
 
             customStyleNameInput.onchange = changeCustomStyle;
             customStyleValueInput.onchange = applyCustomStyle;
-         }
+         };
 
-         var addCustomStyleButton = <HTMLButtonElement>document.documentElement.querySelector('#add-custom-style');
+         var addCustomStyleButton = <HTMLButtonElement>document.documentElement.querySelector("#add-custom-style");
 
          addCustomStyleButton.onclick = addCustomStyle;
 
-var ravePanel = document.getElementById('rave-panel');
+var ravePanel = document.getElementById("rave-panel");
 for(var i = 0; i < 200; i++ ){
-   var raveItem = document.createElement('div');
-   raveItem.className = 'rave-item rave-item-' + Math.ceil(Math.random() * raveColors.length);
+   var raveItem = document.createElement("div");
+   raveItem.className = "rave-item rave-item-" + Math.ceil(Math.random() * raveColors.length);
    ravePanel.appendChild(raveItem);
 }
 
 var colorNameInput = <HTMLInputElement>document.getElementById("color-name");
    colorNameInput.onchange = function () {
       colorNameColor.set(colorNameInput.value);
-   }
-var palletteHueInput = <HTMLInputElement>document.documentElement.querySelector('.hue');
-var palletteSaturationchange = <HTMLInputElement>document.documentElement.querySelector('.saturation');
-var palletteLightnessInput = <HTMLInputElement>document.documentElement.querySelector('.lightness');
+   };
+var palletteHueInput = <HTMLInputElement>document.documentElement.querySelector(".hue");
+var palletteSaturationchange = <HTMLInputElement>document.documentElement.querySelector(".saturation");
+var palletteLightnessInput = <HTMLInputElement>document.documentElement.querySelector(".lightness");
 
 var updatePalletteColor = function () {
 
@@ -396,7 +396,7 @@ splitComplimentaryColor2.setHsl((parseInt(palletteHueInput.value) + 210),
    analagous2.setHsl((parseInt(palletteHueInput.value) -30),
                             parseInt(palletteSaturationchange.value),
                             parseInt(palletteLightnessInput.value));
-                        }
+                        };
 
 updatePalletteColor();
 
@@ -404,13 +404,13 @@ palletteHueInput.onchange = updatePalletteColor;
 palletteSaturationchange.onchange = updatePalletteColor;
 palletteLightnessInput.onchange = updatePalletteColor;
 
-var rgbRedInput = <HTMLInputElement>document.documentElement.querySelector('#rgb-red');
-var rgbGreenInput = <HTMLInputElement>document.documentElement.querySelector('#rgb-green');
-var rgbBlueInput = <HTMLInputElement>document.documentElement.querySelector('#rgb-blue');
+var rgbRedInput = <HTMLInputElement>document.documentElement.querySelector("#rgb-red");
+var rgbGreenInput = <HTMLInputElement>document.documentElement.querySelector("#rgb-green");
+var rgbBlueInput = <HTMLInputElement>document.documentElement.querySelector("#rgb-blue");
 
 var updateRgbColor = function () {
    rgbExampleColor.setRgb(parseInt(rgbRedInput.value), parseInt(rgbGreenInput.value), parseInt(rgbBlueInput.value));
-}
+};
 
 
 rgbRedInput.onchange = updateRgbColor;
@@ -420,31 +420,31 @@ rgbRedInput.oninput = updateRgbColor;
 rgbGreenInput.oninput = updateRgbColor;
 rgbBlueInput.oninput = updateRgbColor;
 
-var hslHueInput = <HTMLInputElement>document.documentElement.querySelector('#hsl-hue');
-var hslSaturationchange = <HTMLInputElement>document.documentElement.querySelector('#hsl-saturation');
-var hslLightnessInput = <HTMLInputElement>document.documentElement.querySelector('#hsl-lightness');
+var hslHueInput = <HTMLInputElement>document.documentElement.querySelector("#hsl-hue");
+var hslSaturationchange = <HTMLInputElement>document.documentElement.querySelector("#hsl-saturation");
+var hslLightnessInput = <HTMLInputElement>document.documentElement.querySelector("#hsl-lightness");
 
 var updateHslColor = function () {
    hslExampleColor.setHsl(parseInt(hslHueInput.value), parseInt(hslSaturationchange.value), parseInt(hslLightnessInput.value));
-}
+};
 
 
 hslHueInput.onchange = updateHslColor;
 hslSaturationchange.onchange = updateHslColor;
 hslLightnessInput.onchange = updateHslColor;
 
-var alphaInput = <HTMLInputElement>document.documentElement.querySelector('#alpha');
+var alphaInput = <HTMLInputElement>document.documentElement.querySelector("#alpha");
 alphaColor.setRgba(0, 0, 0, 1);
 var updateAlphaColor = function () {
    alphaColor.setRgba(alphaColor.red, alphaColor.green, alphaColor.blue, parseFloat(alphaInput.value));
-}
+};
 
 
 alphaInput.onchange = updateAlphaColor;
 
 
 //});
-
+/*
 var hslToRgb = function(hsl) {
    var h = hsl.h, s = hsl.s, l = hsl.l;
    var r, g, b;
@@ -469,8 +469,8 @@ var hslToRgb = function(hsl) {
     }
 
     return { r: Math.round(r * 255), g: Math.round(g * 255), b: Math.round(b * 255)};
-}
-
+}*/
+/*
 var rgbToHsl = function (rgb) {
    var r = rgb.r;
    var g = rgb.g;
@@ -526,7 +526,7 @@ function rgb2ryb(rgb) {
     g -= y;
 
     // If this unfortunate conversion combines blue and green, then cut each in
-    // half to preserve the value's maximum range.
+    // half to preserve the value"s maximum range.
     if (b && g) {
         b /= 2.0;
         g /= 2.0;
@@ -552,11 +552,12 @@ function rgb2ryb(rgb) {
 
     // And return back the ryb typed accordingly.
     return { r : r, y: y, b: b };
-}
+}*/
 
 /**
  * Convert a red-yellow-blue system to a red-green-blue system.
  */
+ /*
 function ryb2rgb(ryb) {
     var r = ryb.r, y = ryb.y, b = ryb.b;
     // Remove the whiteness from the color.
@@ -597,4 +598,4 @@ function ryb2rgb(ryb) {
 
     // And return back the ryb typed accordingly.
     return {r: r, g: g, b:b};
-}
+}*/

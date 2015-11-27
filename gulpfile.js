@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
+var sass = require('gulp-sass');
+var gls = require('gulp-live-server');
 var Server = require('karma').Server;
 
 gulp.task('test', ['build', 'build-test'], function (done) {
@@ -33,4 +35,50 @@ gulp.task('build', function (done) {
         }));
     return tsResult.js.pipe(gulp.dest('./js'));
     //return tsResult.js.pipe(gulp.dest('./js/nine-tails.js'));
+});
+
+gulp.task('build-site', ['build-site-typescript', 'build-site-sass'], function (done) {
+   return gulp.src(['./js/nine-tails.js']).pipe(gulp.dest('./site/js'));
+});
+
+gulp.task('build-site-typescript', function () {
+
+    var tsResult = gulp.src('./site/ts/**/*.ts')
+      .pipe(ts({
+          noImplicitAny: true,
+          module: 'amd',
+          outFile: 'nine-tails-demo.js'
+        }));
+
+    return tsResult.js.pipe(gulp.dest('./site/js'));
+});
+
+gulp.task('build-site-sass', function () {
+
+  return gulp.src('./site/sass/**/*.scss')
+     .pipe(sass().on('error', sass.logError))
+     .pipe(gulp.dest('./site/css'));
+});
+
+gulp.task('dev-site', ['build-site'], function() {
+   //1. serve with default settings
+   //var server = gls.static(); //equals to gls.static('public', 3000);
+   //server.start();
+
+   //2. serve at custom port
+   var server = gls.static('site', 3000);
+   server.start();
+
+   //3. serve multi folders
+   //var server = gls.static(['dist', '.tmp']);
+   //server.start();
+
+   //use gulp.watch to trigger server actions(notify, start or stop)
+   gulp.watch(['./site/**/*.*'], function (file) {
+      server.notify.apply(server, [file]);
+   });
+
+   gulp.watch(['./site/sass/**/*.*'], ['build-site-sass']);
+
+   gulp.watch(['./site/ts/**/*.*'], ['build-site-typescript']);
 });
