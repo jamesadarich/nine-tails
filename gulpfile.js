@@ -38,7 +38,14 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('build-site', ['build-site-typescript', 'build-site-sass'], function (done) {
-   return gulp.src(['./js/nine-tails.js']).pipe(gulp.dest('./site/js'));
+   gulp.src(['./js/nine-tails.js']).pipe(gulp.dest('./site/js'));
+   gulp.src(['./src/**/*.ts']).pipe(gulp.dest('./site/nine-tails'));
+   return gulp.src(['./node_modules/backbone.marionette/lib/backbone.marionette.min.js',
+                    './node_modules/backbone.marionette/node_modules/underscore/underscore-min.js',
+                    './node_modules/backbone.marionette/node_modules/backbone/backbone-min.js',
+                    './node_modules/requirejs/require.js',
+                    './node_modules/jquery/dist/jquery.min.js'
+                     ]).pipe(gulp.dest('./site/js/vendor'));
 });
 
 gulp.task('build-site-typescript', function () {
@@ -46,8 +53,7 @@ gulp.task('build-site-typescript', function () {
     var tsResult = gulp.src('./site/ts/**/*.ts')
       .pipe(ts({
           noImplicitAny: true,
-          module: 'amd',
-          outFile: 'nine-tails-demo.js'
+          module: 'amd'
         }));
 
     return tsResult.js.pipe(gulp.dest('./site/js'));
