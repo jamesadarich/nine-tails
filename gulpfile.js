@@ -31,7 +31,9 @@ gulp.task('build', function (done) {
       .pipe(ts({
           noImplicitAny: true,
           module: 'amd',
-          outFile: 'nine-tails.js'
+          outFile: 'nine-tails.js',
+          declaration: true,
+          sourceMap: true
         }));
     return tsResult.js.pipe(gulp.dest('./js'));
     //return tsResult.js.pipe(gulp.dest('./js/nine-tails.js'));

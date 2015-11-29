@@ -1,7 +1,4 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="color.ts"/>
-
-module NineTails {
+namespace NineTails {
   export class Hue {
 
     color: Color;

@@ -1,8 +1,6 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="./size-type.ts"/>
-///<reference path="./style.ts"/>
 
-module NineTails {
+
+namespace NineTails {
   export class Size extends Style {
       public value: number;
       public type: SizeType;

@@ -1,6 +1,5 @@
-/// <reference path="./nine-tails.ts"/>
 
-module NineTails {
+namespace NineTails {
   export class Style {
     public handlers: any;
     public _value: string;

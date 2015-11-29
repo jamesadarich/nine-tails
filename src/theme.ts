@@ -1,9 +1,6 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="rule.ts"/>
-///<reference path="size.ts"/>
-///<reference path="size-type.ts"/>
 
-module NineTails {
+
+namespace NineTails {
   export class Theme {
 
     public styleSheet: CSSStyleSheet;
@@ -66,7 +63,7 @@ module NineTails {
       /*for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
         if (rule.selectorText.toLowerCase() === selector) {
-          //need to keep the reference to module whilst this isn"t compiling correctly
+          //need to keep the reference to namespace whilst this isn"t compiling correctly
           return new NineTails.Rule(rule);
         }
       }*/

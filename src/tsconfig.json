@@ -8,8 +8,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "out": "../js/nine-tails.js",
-        "outDir": "../js",
+        "outFile": "../js/nine-tails.js",
         "sourceMap": true
     },
     "buildOnSave": true,
@@ -24,7 +23,6 @@
         "./color-type.ts",
         "./color.ts",
         "./hue.ts",
-        "./nine-tails.ts",
         "./overflow-type.ts",
         "./overflow.ts",
         "./position-type.ts",

@@ -1,6 +1,5 @@
-///<reference path="./style.ts"/>
 
-module NineTails {
+namespace NineTails {
    export class BorderStyle extends Style {
       public type: BorderStyleType;
 

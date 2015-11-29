@@ -1,8 +1,6 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="./position-type.ts"/>
-///<reference path="./style.ts"/>
 
-module NineTails {
+
+namespace NineTails {
    export class Position extends Style {
       public type: PositionType;
 

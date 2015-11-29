@@ -1,8 +1,6 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="./overflow-type.ts"/>
-///<reference path="./style.ts"/>
 
-module NineTails {
+
+namespace NineTails {
    export class Overflow extends Style {
       public type: OverflowType;
 

@@ -1,8 +1,4 @@
-/// <reference path="./nine-tails.ts"/>
-/// <reference path="./style.ts"/>
-/// <reference path="./color-type.ts"/>
-
-module NineTails {
+namespace NineTails {
    export class Color extends Style {
       red: number;
       green: number;

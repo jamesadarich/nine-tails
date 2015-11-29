@@ -1,7 +1,6 @@
-/// <reference path="./nine-tails.ts"/>
-///<reference path="style.ts"/>
 
-module NineTails {
+
+namespace NineTails {
   export class Rule {
 
     private cssRule: CSSStyleRule;

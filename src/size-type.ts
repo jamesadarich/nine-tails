@@ -1,6 +1,5 @@
-/// <reference path="./nine-tails.ts"/>
 
-module NineTails {
+namespace NineTails {
    export enum SizeType {
       Pixels,
       Percentage
