@@ -1,11 +1,12 @@
 
+import { Rule } from "./rule";
 
-namespace NineTails {
+//namespace NineTails {
   export class Theme {
 
     public styleSheet: CSSStyleSheet;
     //public colors: Color[];
-    public sizes: Size[];
+    //public sizes: Size[];
 
     constructor () {
       var styleElement = document.createElement("style");
@@ -20,7 +21,7 @@ namespace NineTails {
       (<any>styleElement)["theme"] = this;
 
       //this.colors = [];
-      this.sizes = [];
+      //this.sizes = [];
     }
 
     /*
@@ -59,7 +60,7 @@ namespace NineTails {
       /*if (selector.charAt(0) !== "." && selector.charAt(0) !== "#") {
         selector = selector.toLowerCase();
       }*/
-      return new NineTails.Rule(<CSSStyleRule>cssRules[ruleIndex]);
+      return new Rule(<CSSStyleRule>cssRules[ruleIndex]);
       /*for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
         if (rule.selectorText.toLowerCase() === selector) {
@@ -69,4 +70,4 @@ namespace NineTails {
       }*/
     }
   }
-}
+//}

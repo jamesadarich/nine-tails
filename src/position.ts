@@ -1,6 +1,8 @@
 
+import { Style } from "./style";
+import { PositionType } from "./position-type";
 
-namespace NineTails {
+//namespace NineTails {
    export class Position extends Style {
       public type: PositionType;
 
@@ -18,4 +20,4 @@ namespace NineTails {
          this.notifyHandlers();
       }
    }
-}
+//}

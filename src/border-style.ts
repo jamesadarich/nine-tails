@@ -1,5 +1,7 @@
+import { Style } from "./style";
+import { BorderStyleType } from "./border-style-type";
 
-namespace NineTails {
+// NineTails {
    export class BorderStyle extends Style {
       public type: BorderStyleType;
 
@@ -17,4 +19,4 @@ namespace NineTails {
          this.notifyHandlers();
       }
    }
-}
+//}

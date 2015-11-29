@@ -1,4 +1,6 @@
-namespace NineTails {
+import { Color } from "./color";
+
+//namespace NineTails {
   export class Hue {
 
     color: Color;
@@ -18,4 +20,4 @@ namespace NineTails {
       }
     }
   }
-}
+//}

@@ -1,7 +1,7 @@
-namespace NineTails {
+//namespace NineTails {
    export enum ColorType {
       Name,
       RGBA,
       HSL
    }
-}
+//}

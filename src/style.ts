@@ -1,5 +1,5 @@
 
-namespace NineTails {
+//namespace NineTails {
   export class Style {
     public handlers: any;
     public _value: string;
@@ -22,4 +22,4 @@ namespace NineTails {
       this.handlers.push({ handler: handler, context: context, extras: extras });
     }
   }
-}
+//}

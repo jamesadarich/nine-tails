@@ -1,5 +1,5 @@
 
-namespace NineTails {
+//namespace NineTails {
    export enum BorderStyleType {
       Dashed,
       Dotted,
@@ -14,4 +14,4 @@ namespace NineTails {
       Ridge,
       Solid
    }
-}
+//}

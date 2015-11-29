@@ -1,6 +1,7 @@
 
+import { Style } from "./style";
 
-namespace NineTails {
+//namespace NineTails {
   export class Rule {
 
     private cssRule: CSSStyleRule;
@@ -32,4 +33,4 @@ namespace NineTails {
       }
     }
   }
-}
+//}

@@ -1,6 +1,7 @@
 
-
-namespace NineTails {
+import { Style } from "./style";
+import { SizeType } from "./size-type";
+//namespace NineTails {
   export class Size extends Style {
       public value: number;
       public type: SizeType;
@@ -30,4 +31,4 @@ namespace NineTails {
         this.notifyHandlers();
       }
   }
-}
+//}

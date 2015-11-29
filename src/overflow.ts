@@ -1,6 +1,7 @@
+import { Style } from "./style";
+import { OverflowType} from "./overflow-type";
 
-
-namespace NineTails {
+//namespace NineTails {
    export class Overflow extends Style {
       public type: OverflowType;
 
@@ -18,4 +19,4 @@ namespace NineTails {
          this.notifyHandlers();
       }
    }
-}
+//}

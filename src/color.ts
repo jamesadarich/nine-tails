@@ -1,4 +1,6 @@
-namespace NineTails {
+import { Style } from "./style";
+
+//namespace NineTails {
    export class Color extends Style {
       red: number;
       green: number;
@@ -122,4 +124,4 @@ namespace NineTails {
             }
       }
    }
-}
+//}

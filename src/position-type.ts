@@ -1,5 +1,5 @@
 
-namespace NineTails {
+//namespace NineTails {
    export enum PositionType {
       Absolute,
       Fixed,
@@ -8,4 +8,4 @@ namespace NineTails {
       Relative,
       Static
    }
-}
+//}

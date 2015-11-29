@@ -24,7 +24,6 @@
         "./nine-tails/color-type.ts",
         "./nine-tails/color.ts",
         "./nine-tails/hue.ts",
-        "./nine-tails/nine-tails.ts",
         "./nine-tails/overflow-type.ts",
         "./nine-tails/overflow.ts",
         "./nine-tails/position-type.ts",
@@ -38,7 +37,8 @@
         "./ts/demo.ts",
         "./ts/router.ts",
         "./ts/start.ts",
-        "./ts/views/app-shell.ts"
+        "./ts/views/app-shell.ts",
+        "./ts/views/pages/demos.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
