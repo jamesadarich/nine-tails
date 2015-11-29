@@ -91,6 +91,12 @@ header {
    height: 64px;
    z-index: 100;
    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+   line-height: 3.5em;
+
+   h1 {
+     font-size: 1.5em;
+     display: inline;
+   }
 }
 
 
@@ -98,7 +104,7 @@ header {
 #menu {
   position: fixed;
   z-index: 200;
-  top: -20px;
+  top: 0;
   width: 100%;
   left: -100%;
   height: 100%;
@@ -106,6 +112,9 @@ header {
 
   &.show {
     left: 0;
+  }
+  & h1 {
+    margin: 16px;
   }
 
   & > div {
@@ -125,6 +134,18 @@ header {
     display: inline;
      margin-top: -56px;
  }
+}
+a {
+
+  text-decoration: none;
+}
+.menu-item {
+
+  color: #888;
+  padding: 8px;
+  &:hover {
+    background-color: #eee;
+  }
 }
 
 #menu-button {

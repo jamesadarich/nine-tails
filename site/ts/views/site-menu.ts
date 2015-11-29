@@ -26,9 +26,9 @@ export class SiteMenu extends Marionette.LayoutView<Backbone.Model> {
       <h1>Menu</h1>
     </header>
     <a href="#demos">
-      <div>Demo</div>
+      <div class="menu-item">Demo</div>
     </a>
     <a href="#api">
-      <div>API</div>
+      <div class="menu-item">API</div>
     </a>`;
 }
