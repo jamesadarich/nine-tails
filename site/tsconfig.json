@@ -15,30 +15,25 @@
     "compileOnSave": true,
     "filesGlob": [
         "./**/*.ts",
+        "!./nine-tails/**/*.ts",
         "!../node_modules/**/*.ts",
         "!../src/**/*.ts"
     ],
     "files": [
-        "./nine-tails/border-style-type.ts",
-        "./nine-tails/border-style.ts",
-        "./nine-tails/color-type.ts",
-        "./nine-tails/color.ts",
-        "./nine-tails/hue.ts",
-        "./nine-tails/overflow-type.ts",
-        "./nine-tails/overflow.ts",
-        "./nine-tails/position-type.ts",
-        "./nine-tails/position.ts",
-        "./nine-tails/rule.ts",
-        "./nine-tails/size-type.ts",
-        "./nine-tails/size.ts",
-        "./nine-tails/style.ts",
-        "./nine-tails/theme.ts",
         "./ts/app.ts",
         "./ts/demo.ts",
         "./ts/router.ts",
         "./ts/start.ts",
+        "./ts/theme.ts",
         "./ts/views/app-shell.ts",
-        "./ts/views/pages/demos.ts"
+        "./ts/views/hsl-color-set.ts",
+        "./ts/views/length-set.ts",
+        "./ts/views/pages/api/api.ts",
+        "./ts/views/pages/demos/demos.ts",
+        "./ts/views/pages/demos/size-section.ts",
+        "./ts/views/pages/demos/spacing-section.ts",
+        "./ts/views/pages/demos/theming-section.ts",
+        "./ts/views/site-menu.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

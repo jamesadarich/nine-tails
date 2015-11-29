@@ -1,47 +1,32 @@
 {
     "compilerOptions": {
-        "target": "es3",
+        "target": "es5",
         "module": "amd",
         "declaration": true,
         "noImplicitAny": true,
-        "removeComments": true,
+        "sourceMap": true,
         "preserveConstEnums": true,
-        "outFile": "../js/nine-tails.js",
-        "sourceMap": true
+        "outFile": "../js/nine-tails.js"
     },
     "buildOnSave": true,
     "compileOnSave": true,
-    "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/*.ts"
+    "exclude": [
+      "**/*.d.ts"
     ],
     "files": [
-        "./border-style-type.d.ts",
         "./border-style-type.ts",
-        "./border-style.d.ts",
         "./border-style.ts",
-        "./color-type.d.ts",
         "./color-type.ts",
-        "./color.d.ts",
         "./color.ts",
-        "./hue.d.ts",
         "./hue.ts",
-        "./overflow-type.d.ts",
         "./overflow-type.ts",
-        "./overflow.d.ts",
         "./overflow.ts",
-        "./position-type.d.ts",
         "./position-type.ts",
-        "./position.d.ts",
         "./position.ts",
         "./rule.ts",
-        "./size-type.d.ts",
         "./size-type.ts",
-        "./size.d.ts",
         "./size.ts",
-        "./style.d.ts",
         "./style.ts",
-        "./theme.d.ts",
         "./theme.ts"
     ],
     "atom": {

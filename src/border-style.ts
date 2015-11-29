@@ -1,5 +1,4 @@
-import { Style } from "./style";
-import { BorderStyleType } from "./border-style-type";
+/// <reference path="style.ts" />
 
 // NineTails {
    export class BorderStyle extends Style {
