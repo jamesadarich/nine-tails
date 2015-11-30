@@ -30,8 +30,10 @@
         "./ts/views/length-set.ts",
         "./ts/views/pages/api/api.ts",
         "./ts/views/pages/demos/demos.ts",
+        "./ts/views/pages/demos/position-section.ts",
         "./ts/views/pages/demos/size-section.ts",
         "./ts/views/pages/demos/spacing-section.ts",
+        "./ts/views/pages/demos/text-section.ts",
         "./ts/views/pages/demos/theming-section.ts",
         "./ts/views/site-menu.ts"
     ],

@@ -27,12 +27,12 @@ export class SpacingSectionView extends Marionette.LayoutView<Backbone.Model> {
     rule.linkStyle("padding", this.padding);
   }
 
-  public onRender(){
-    this.el.querySelector('#margin').value = this.margin.get();
-    this.el.querySelector('#margin').oninput = () => this.margin.set(this.el.querySelector('#margin').value);
-    this.el.querySelector('#border').value = this.border.get();
+  public onAttach(){
+    this.el.querySelector('#margin').value = parseInt(this.margin.get());
+    this.el.querySelector('#margin').oninput =() => this.margin.set(this.el.querySelector('#margin').value);
+    this.el.querySelector('#border').value = parseInt(this.border.get());
     this.el.querySelector('#border').oninput = () => this.border.set(this.el.querySelector('#border').value);
-    this.el.querySelector('#padding').value = this.padding.get();
+    this.el.querySelector('#padding').value = parseInt(this.padding.get());
     this.el.querySelector('#padding').oninput = () => this.padding.set(this.el.querySelector('#padding').value);
   }
 
@@ -43,15 +43,15 @@ export class SpacingSectionView extends Marionette.LayoutView<Backbone.Model> {
   <div id="spacing-sliders">
   <div class="slider">
   <label>margin</label>
-  <input type="range" id="margin" max="20" value="8"/>
+  <input type="range" id="margin" max="20"/>
   </div>
   <div class="slider">
   <label>border</label>
-  <input type="range" id="border" max="20" value="2"/>
+  <input type="range" id="border" max="20"/>
   </div>
   <div class="slider">
   <label>padding</label>
-  <input type="range" id="padding" max="20" value="8"/>
+  <input type="range" id="padding" max="20"/>
   </div>
   </div>
   <div id="spacing-example">

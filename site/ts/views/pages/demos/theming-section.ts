@@ -48,7 +48,7 @@ public backgroundColorSetView: HslColorSetView;
 
    public template: () => string = () => `
 
-      <h1>Theming</h1>
+      <h2>Theming</h2>
       <p>
          Making things look good, let's face it, is one of the most important things when creating anything.
          Everyone knows not to judge a book by it's cover but with ever evolving competition it's difficult to stand out from the crowd.

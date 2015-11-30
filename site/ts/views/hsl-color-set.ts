@@ -9,7 +9,8 @@
 
 export class HslColorSetView extends Marionette.LayoutView<Backbone.Model> {
 
-  public color: NineTails.Color;
+     public color: NineTails.Color;
+  public contrastColor: NineTails.Color;
   public labelText: string;
 
   public constructor(labelText: string, color: NineTails.Color, selector: string, app: NineTailsSiteApp) {
@@ -18,17 +19,21 @@ export class HslColorSetView extends Marionette.LayoutView<Backbone.Model> {
     this.labelText = labelText;
     var rule = app.theme.createRule(selector + " .hsl-color-set");
     rule.linkStyle("background-color", color);
-    var contrastColor = new NineTails.Color("rgb(0,0,0)");
-    rule.linkStyle("color", contrastColor);
-    this.color.onSet(() => {
+    this.contrastColor = new NineTails.Color("rgb(0,0,0)");
+    rule.linkStyle("color", this.contrastColor);
+    this.color.onSet(this._updateContrastColor, this);
+    this._updateContrastColor();
+  }
+
+  private _updateContrastColor() {
+
       if(this.color.lightness > 50) {
-        contrastColor.setRgb(0, 0, 0);
+         this.contrastColor.setRgb(0, 0, 0);
       }
       else {
-        contrastColor.setRgb(255, 255, 255);
+         this.contrastColor.setRgb(255, 255, 255);
       }
-    }, this);
-  }
+ }
 
   public onRender() {
     this.el.className = "hsl-color-set";

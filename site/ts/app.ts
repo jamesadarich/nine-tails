@@ -76,7 +76,7 @@ export class NineTailsSiteApp extends Marionette.Application {
     generalRule.linkStyle("color", this.textColor);
 
     this.backgroundColor = new NineTails.Color("rgb(255,255,255)");
-    this.backgroundColor.setHsl(0, 0, 100);
+    this.backgroundColor.setHsl(0, 0, 95);
     generalRule.linkStyle("background-color", this.backgroundColor);
 
     var headingRule = this.theme.createRule("h1, h2, h3");

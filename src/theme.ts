@@ -39,6 +39,14 @@ import { Rule } from "./rule";
     */
 
     createRule(selector: string) : Rule {
+      //find rule if already exists
+      for (var i = 0; i < cssRules.length; i++) {
+        var rule = <CSSStyleRule>cssRules[i];
+        if (rule.selectorText.toLowerCase() === selector) {
+          //need to keep the reference to namespace whilst this isn"t compiling correctly
+          return new NineTails.Rule(rule);
+        }
+
       var ruleIndex = 0;
          var selectors = selector.split(" ");
          for(var i = 0; i < selectors.length; i++) {
