@@ -22,6 +22,7 @@
     "files": [
         "./ts/app.ts",
         "./ts/demo.ts",
+        "./ts/models/custom-style.ts",
         "./ts/router.ts",
         "./ts/start.ts",
         "./ts/theme.ts",
@@ -29,6 +30,10 @@
         "./ts/views/hsl-color-set.ts",
         "./ts/views/length-set.ts",
         "./ts/views/pages/api/api.ts",
+        "./ts/views/pages/demos/color-section.ts",
+        "./ts/views/pages/demos/custom-section.ts",
+        "./ts/views/pages/demos/custom-style-list.ts",
+        "./ts/views/pages/demos/custom-style.ts",
         "./ts/views/pages/demos/demos.ts",
         "./ts/views/pages/demos/position-section.ts",
         "./ts/views/pages/demos/size-section.ts",
