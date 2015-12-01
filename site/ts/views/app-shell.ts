@@ -17,6 +17,7 @@ export class AppShellView extends Marionette.LayoutView<Backbone.Model> {
   private _currentPage: Marionette.LayoutView<Backbone.Model>;
     private _siteMenu: Marionette.Region;
     private _menu: SiteMenu;
+    public pageTitle: string;
   private app: NineTailsSiteApp;
 
   public constructor(app: NineTailsSiteApp) {
@@ -29,6 +30,7 @@ export class AppShellView extends Marionette.LayoutView<Backbone.Model> {
   }
 
   public onRender() {
+    this.el.querySelector("#page-title").innerHTML = this.pageTitle;
     this.el.querySelector("#menu-button").onclick = () => this._menu.toggle();
     this._siteMenu.show(this._menu);
     this._pageSection.show(this._currentPage);
@@ -37,16 +39,22 @@ export class AppShellView extends Marionette.LayoutView<Backbone.Model> {
   public showHome() {
     this._currentPage = new HomePage(this.app);
       this._pageSection.show(this._currentPage);
+      this.pageTitle = "ninetails";
+      this.el.querySelector("#page-title").innerHTML = this.pageTitle;
   }
 
   public showDemos() {
     this._currentPage = new DemosPage(this.app);
       this._pageSection.show(this._currentPage);
+      this.pageTitle = "demos";
+      this.el.querySelector("#page-title").innerHTML = this.pageTitle;
   }
 
   public showApi() {
     this._currentPage = new ApiPage(this.app);
       this._pageSection.show(this._currentPage);
+      this.pageTitle = "api";
+      this.el.querySelector("#page-title").innerHTML = this.pageTitle;
   }
 
   public template: () => string = () => `
@@ -55,7 +63,7 @@ export class AppShellView extends Marionette.LayoutView<Backbone.Model> {
       <button type="button" id="menu-button">
         <i class="fa fa-2x fa-bars"></i>
       </button>
-      <h1>ninetails</h1>
+      <h1 id="page-title"></h1>
     </header>
     <section id="page-section"></section>`;
 }

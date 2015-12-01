@@ -23,7 +23,9 @@ export class SiteMenu extends Marionette.LayoutView<Backbone.Model> {
 
   public template: () => string = () => `
     <header>
-      <h1>Menu</h1>
+      <a href="#">
+        <h1>ninetails</h1>
+      </a>
     </header>
     <a href="#demos">
       <div class="menu-item">Demo</div>
