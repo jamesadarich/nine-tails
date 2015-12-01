@@ -26,7 +26,9 @@
         "./ts/router.ts",
         "./ts/start.ts",
         "./ts/theme.ts",
+        "./ts/views/alpha-color-set.ts",
         "./ts/views/app-shell.ts",
+        "./ts/views/free-text-color-set.ts",
         "./ts/views/hsl-color-set.ts",
         "./ts/views/length-set.ts",
         "./ts/views/pages/api/api.ts",
@@ -36,10 +38,12 @@
         "./ts/views/pages/demos/custom-style.ts",
         "./ts/views/pages/demos/demos.ts",
         "./ts/views/pages/demos/position-section.ts",
+        "./ts/views/pages/demos/rave-panel.ts",
         "./ts/views/pages/demos/size-section.ts",
         "./ts/views/pages/demos/spacing-section.ts",
         "./ts/views/pages/demos/text-section.ts",
         "./ts/views/pages/demos/theming-section.ts",
+        "./ts/views/rgb-color-set.ts",
         "./ts/views/site-menu.ts"
     ],
     "atom": {

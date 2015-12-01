@@ -7,28 +7,24 @@ body {
    padding: 64px;
 }
 
-#rgb-output, #hsl-output {
-   padding: 64px;
-}
-
-#alpha {
+.alpha {
    width: 100%;
 }
 
-#hidden-text {
+.hidden-text {
    padding: 64px;
    text-align: center;
    font-size: 2em;
 }
 
-#alpha-result {
+.alpha-result {
     position: absolute;
     height: 176px;
     top: 0;
     width: 100%;
 }
 
-#alpha-container {
+.alpha-container {
     position: relative;
     height: 176px;
 }
@@ -86,7 +82,7 @@ body {
    }
 }
 
-input#color-name {
+input.color-name {
     margin: 0 auto;
     height: 28px;
     background: transparent;

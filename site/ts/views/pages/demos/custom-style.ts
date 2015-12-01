@@ -18,13 +18,14 @@ export class CustomStyleView extends Marionette.ItemView<CustomStyleModel> {
     super();
     this.rule = options.rule;
     this.style = new NineTails.Style();
-    this.model.on("change:name", this._updateStyleName, this);
-    this.model.on("change:value", this._updateStyleValue, this);
+    this.model = options.model;
+    options.model.on("change:name", this._updateStyleName, this);
+    options.model.on("change:value", this._updateStyleValue, this);
   }
 
   public onAttach() {
-    /*this.el.querySelector(".custom-style-name").oninput = () => this.model.set("name", this.el.querySelector(".custom-style-name").value);
-    this.el.querySelector(".custom-style-value").oninput = () => this.model.set("value", this.el.querySelector(".custom-style-value").value);*/
+    this.el.querySelector(".custom-style-name").oninput = () => this.model.set("name", this.el.querySelector(".custom-style-name").value);
+    this.el.querySelector(".custom-style-value").oninput = () => this.model.set("value", this.el.querySelector(".custom-style-value").value);
   }
 
   private _updateStyleName() {
@@ -33,12 +34,11 @@ export class CustomStyleView extends Marionette.ItemView<CustomStyleModel> {
 
   private _updateStyleValue() {
     this.style._value = this.model.get("value");
+    this.style.notifyHandlers();
   }
 
-  public template(): string {
-    return `
+  public template: () => string = () => `
       <input type="text" class="custom-style-name" />
       <input type="text" class="custom-style-value" />
-    `
-  }
+    `;
 }

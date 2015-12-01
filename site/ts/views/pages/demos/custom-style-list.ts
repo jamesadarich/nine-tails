@@ -17,10 +17,5 @@ export class CustomStyleListView extends Marionette.CollectionView<Backbone.Mode
       childView: CustomStyleView,
       childViewOptions: () => { return { rule: rule } }
     });
-    /*
-    this.collection =  collection
-    this.childView = CustomStyleView;
-    this.childViewOptions = () => { return { rule: rule } };
-    */
   }
 }

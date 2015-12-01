@@ -43,5 +43,6 @@ export class CustomSectionView extends Marionette.LayoutView<Backbone.Model> {
      <div id="custom-container">
         <div id="custom-example-result"></div>
      </div>
+     <div style="clear: both"></div>
   </div>`;
 }
