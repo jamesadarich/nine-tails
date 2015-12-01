@@ -37,6 +37,7 @@
         "./ts/views/pages/demos/custom-style-list.ts",
         "./ts/views/pages/demos/custom-style.ts",
         "./ts/views/pages/demos/demos.ts",
+        "./ts/views/pages/demos/pallette.ts",
         "./ts/views/pages/demos/position-section.ts",
         "./ts/views/pages/demos/rave-panel.ts",
         "./ts/views/pages/demos/size-section.ts",

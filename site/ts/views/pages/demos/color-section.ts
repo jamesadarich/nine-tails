@@ -10,6 +10,7 @@ import { RgbColorSetView } from "../../rgb-color-set";
 import { AlphaColorSetView } from "../../alpha-color-set";
 import { FreeTextColorSetView } from "../../free-text-color-set";
 import { RaveColorPanelView } from "./rave-panel";
+import { PalletteView } from "./pallette";
 
 "use strict";
 
@@ -25,6 +26,8 @@ export class ColorSectionView extends Marionette.LayoutView<Backbone.Model> {
         public colorNameExampleSection: Marionette.Region;
          public ravePanelExampleView: RaveColorPanelView;
          public ravePanelExampleSection: Marionette.Region;
+          public palletteExampleView: PalletteView;
+          public palletteExampleSection: Marionette.Region;
 
   public constructor(app: NineTailsSiteApp) {
     super();
@@ -56,6 +59,13 @@ export class ColorSectionView extends Marionette.LayoutView<Backbone.Model> {
 
     this.ravePanelExampleView = new RaveColorPanelView(app, 100, 1196, 200);
         this.addRegion("ravePanelExampleSection", "#rave-panel");
+
+        this.addRegion("colorNameExampleSection", "#color-name-result");
+
+            var palletteBaseColor = new NineTails.Color("");
+            palletteBaseColor.setHsl(180, 50, 50);
+        this.palletteExampleView = new PalletteView(palletteBaseColor, app);
+            this.addRegion("palletteExampleSection", "#pallette");
   }
 
   public onAttach(){
@@ -64,6 +74,7 @@ export class ColorSectionView extends Marionette.LayoutView<Backbone.Model> {
           this.alphaExampleSection.show(this.alphaExampleView);
             this.colorNameExampleSection.show(this.colorNameExampleView);
              this.ravePanelExampleSection.show(this.ravePanelExampleView);
+              this.palletteExampleSection.show(this.palletteExampleView);
   }
 
   public template: () => string = () => `
@@ -83,37 +94,10 @@ export class ColorSectionView extends Marionette.LayoutView<Backbone.Model> {
 <p>Switch styles regularly? Want your users to change their style easily? Previews as you go? No problemo!</p>
 <div id="color-name-result"></div>
 <h3>Change it very quickly</h3>
-<p>That"s no problem, let's rave!</p>
+<p>That's no problem, let's rave!</p>
 <div id="rave-panel"></div>
 <div id="pallettes">
  <h3>Pallettes</h3>
- <div class="pallette">
-    <div class="main-color">
-       <input type="range" class="hue" max="360" />
-       <input type="range" class="saturation" max="100" />
-       <input type="range" class="lightness" max="100" />
-    </div><div class="computed-colors">
-       <label>Complimentary</label>
-       <div class="complimentary-color"></div>
-       <label>Split complimentary</label>
-       <div class="split-complimentary-colors">
-          <div class="split-complimentary-color-1"></div>
-          <div class="main-color"></div>
-          <div class="split-complimentary-color-2"></div>
-       </div>
-       <label>Triad</label>
-       <div class="triad-colors">
-          <div class="triad-color-1"></div>
-          <div class="main-color"></div>
-          <div class="triad-color-2"></div>
-       </div>
-       <label>Analagous</label>
-       <div class="analagous-colors">
-          <div class="analagous-color-1"></div>
-          <div class="main-color"></div>
-          <div class="analagous-color-2"></div>
-       </div>
-    </div>
- </div>
+ <div id="pallette"></div>
 </div>`;
 }
