@@ -47,18 +47,18 @@ body {
     margin: 0;
 }
 
-.pallette > div {
+#pallette > div > div {
     width: 50%;
     display: inline-block;
     height: 50px;
     text-align: center;
 }
 
-.pallette {
+#pallette {
    padding: 0;
 }
 
-.pallette > .main-color {
+#pallette > div >.base-color {
    height: 400px;
    float: left;
 }
@@ -271,4 +271,19 @@ div#custom-styles-panel {
 
 div#custom-example {
     padding: 16px;
+}
+
+.shades {
+    clear: both;
+    width: 100% !important;
+
+    label {
+      display: block;
+    }
+
+    div {
+      height: 10px;
+      width: 9%;
+      display: inline-block;
+    }
 }
