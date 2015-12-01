@@ -6,6 +6,7 @@
 
 import { DemosPage } from "./pages/demos/demos";
 import { ApiPage } from "./pages/api/api";
+import { HomePage } from "./pages/home/home";
 import { SiteMenu } from "./site-menu";
 
 "use strict";
@@ -31,6 +32,11 @@ export class AppShellView extends Marionette.LayoutView<Backbone.Model> {
     this.el.querySelector("#menu-button").onclick = () => this._menu.toggle();
     this._siteMenu.show(this._menu);
     this._pageSection.show(this._currentPage);
+  }
+
+  public showHome() {
+    this._currentPage = new HomePage(this.app);
+      this._pageSection.show(this._currentPage);
   }
 
   public showDemos() {

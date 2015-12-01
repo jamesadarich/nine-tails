@@ -96,7 +96,7 @@ export class NineTailsSiteApp extends Marionette.Application {
   }
 
   public showHome(): void {
-    //this._appShell.showDemos();
+    this._appShell.showHome();
   }
 
   public showDemos(): void {

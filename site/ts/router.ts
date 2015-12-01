@@ -12,7 +12,7 @@ export class NineTailsRouter extends Marionette.AppRouter {
 
    public constructor(app: NineTailsSiteApp) {
       super({ routes: {}, appRoutes: {
-        //"*path": "showHome",
+        "": "showHome",
         "demos": "showDemos",
         "api": "showApi"
     },  controller: app });

@@ -44,6 +44,7 @@
         "./ts/views/pages/demos/spacing-section.ts",
         "./ts/views/pages/demos/text-section.ts",
         "./ts/views/pages/demos/theming-section.ts",
+        "./ts/views/pages/home/home.ts",
         "./ts/views/rgb-color-set.ts",
         "./ts/views/site-menu.ts"
     ],
