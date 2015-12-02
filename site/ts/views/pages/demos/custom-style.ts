@@ -21,7 +21,14 @@ export class CustomStyleView extends Marionette.ItemView<CustomStyleModel> {
     this.model = options.model;
     options.model.on("change:name", this._updateStyleName, this);
     options.model.on("change:value", this._updateStyleValue, this);
+    this._updateStyleName();
+    this._updateStyleValue();
   }
+
+  public onRender() {
+     this.el.querySelector(".custom-style-name").value = this.model.get("name");
+        this.el.querySelector(".custom-style-value").value = this.model.get("value");
+ }
 
   public onAttach() {
     this.el.querySelector(".custom-style-name").oninput = () => this.model.set("name", this.el.querySelector(".custom-style-name").value);

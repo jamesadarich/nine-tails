@@ -9,7 +9,7 @@
 
 export class CustomStyleModel extends Backbone.Model {
 
-  public constructor(options) {
+  public constructor(options: any) {
     super(options);
   }
 }
