@@ -104,5 +104,56 @@ export class HomePage extends Marionette.LayoutView<Backbone.Model> {
 
    public template: () => string = () => `
     <div id="showcase">Style it</div>
-    <div id="example-container"><div id="example"></div></div>`;
+    <div id="example-container"><div id="example"></div></div>
+    <h2>Why do I need Ninetails?</h2>
+    <p>Because it's awesome... and!</p>
+    <table>
+      <thead>
+         <tr>
+            <th>Features</th>
+            <th>Ninetails</th>
+            <th>JSS</th>
+            <th>jQuery CSS</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>Framework agnostic</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+         </tr>
+         <tr>
+            <td>Events</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+         </tr>
+         <tr>
+            <td>Programatic style changing</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times"></i></td>
+         </tr>
+         <tr>
+            <td>CSS compliant</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times"></i></td>
+         </tr>
+         <tr>
+            <td>TypeScript</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+         </tr>
+         <tr>
+            <td>Link styles together</td>
+            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times"></i></td>
+            <td><i class="fa fa-times"></i></td>
+         </tr>
+      </tbody>
+    </table>
+    `;
 }
