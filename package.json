@@ -40,7 +40,11 @@
     "phantomjs": "^1.9.18",
     "typescript": "^1.6.2",
     "gulp-sass": "^2.1.0",
-    "gulp-live-server": "0.0.29"
+    "gulp-live-server": "0.0.29",
+    "browserify": "^13.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "karma-requirejs": "^0.2.3"
   },
   "dependencies": {
     "node-static": "^0.7.7",

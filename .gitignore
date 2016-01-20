@@ -1,5 +1,7 @@
 # TypeScript stuff
 js
+src/**/*.js
+src/**/*.js.map
 
 # npm
 node_modules

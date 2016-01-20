@@ -1,18 +1,17 @@
-/// <reference path="../src/nine-tails.ts"/>
-///<reference path="../src/style.ts"/>
 ///<reference path="../typings/jasmine/jasmine.d.ts"/>
+import { Style } from "../src/style";
 
 describe("Style", function() {
    describe("constructing a new Style", function (){
        it("should set the handlers array to an empty array", function () {
-           var style = new NineTails.Style();
+           var style = new Style();
            expect(style.handlers.length).toBe(0);
        });
    });
 
    describe("getting the value of a Style", function() {
       it("should always return empty string", function (){
-         var style = new NineTails.Style();
+         var style = new Style();
 
          expect(style.get()).toBe("");
       });
@@ -20,7 +19,7 @@ describe("Style", function() {
 
    describe("registering a listener of a style", function() {
       it("should store the given details in the handlers array", function (){
-         var style = new NineTails.Style();
+         var style = new Style();
 
          style.onSet(1, 2, 3);
 
@@ -32,7 +31,7 @@ describe("Style", function() {
 
    describe("broadcasting changest to a listener", function() {
       it("should call the handler with the new value and whatever extra", function (){
-         var style = new NineTails.Style();
+         var style = new Style();
 
          style.onSet({ call: function() { console.log("call"); } }, 2, 3);
 

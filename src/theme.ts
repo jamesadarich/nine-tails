@@ -39,36 +39,24 @@ import { Rule } from "./rule";
     */
 
     createRule(selector: string) : Rule {
+      var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
       //find rule if already exists
       for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
         if (rule.selectorText.toLowerCase() === selector) {
           //need to keep the reference to namespace whilst this isn"t compiling correctly
-          return new NineTails.Rule(rule);
+          return new Rule(rule);
         }
 
       var ruleIndex = 0;
          var selectors = selector.split(" ");
-         for(var i = 0; i < selectors.length; i++) {
-            if (selectors[i].charAt(0) !== "." && selectors[i].charAt(0) !== "#") {
-               selectors[i] = selectors[i].toUpperCase();
+         for(let j = 0; j < selectors.length; j++) {
+            if (selectors[j].charAt(0) !== "." && selectors[j].charAt(0) !== "#") {
+               selectors[j] = selectors[j].toUpperCase();
             }
          }
 
          selector = selectors.join(' ');
-
-    if (this.styleSheet.insertRule) {
-       ruleIndex = this.styleSheet.insertRule(selector + " { }", 0);
-    }else {
-       ruleIndex = this.styleSheet.addRule(selector);
-      }
-
-
-      var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
-      /*if (selector.charAt(0) !== "." && selector.charAt(0) !== "#") {
-        selector = selector.toLowerCase();
-      }*/
-      return new Rule(<CSSStyleRule>cssRules[ruleIndex]);
       /*for (var i = 0; i < cssRules.length; i++) {
         var rule = <CSSStyleRule>cssRules[i];
         if (rule.selectorText.toLowerCase() === selector) {
@@ -77,5 +65,18 @@ import { Rule } from "./rule";
         }
       }*/
     }
+
+if (this.styleSheet.insertRule) {
+  ruleIndex = this.styleSheet.insertRule(selector + " { }", 0);
+}else {
+  ruleIndex = this.styleSheet.addRule(selector);
+}
+
+
+/*if (selector.charAt(0) !== "." && selector.charAt(0) !== "#") {
+  selector = selector.toLowerCase();
+}*/
+return new Rule(<CSSStyleRule>cssRules[ruleIndex]);
+  }
   }
 //}

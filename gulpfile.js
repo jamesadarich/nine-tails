@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var sass = require('gulp-sass');
 var gls = require('gulp-live-server');
+var browserify = require('browserify');
+var source      = require("vinyl-source-stream");
+var buffer      = require("vinyl-buffer");
 var Server = require('karma').Server;
 
 gulp.task('test', ['build', 'build-test'], function (done) {
@@ -18,7 +21,7 @@ gulp.task('build-test', function (done) {
         module: 'amd'
       }));
   //return tsResult.js.pipe(gulp.dest('test/js'));
-    return tsResult.js.pipe(gulp.dest('./test/js'));
+    return tsResult.js.pipe(gulp.dest('./test'));
 });
 
 gulp.task('tdd', function () {
@@ -30,13 +33,26 @@ gulp.task('build', function (done) {
     var tsResult = gulp.src('./src/**/*.ts')
       .pipe(ts({
           noImplicitAny: true,
-          module: 'amd',
-          outFile: 'nine-tails.js',
+          module: 'commonjs',
+          out: 'nine-tails.js',
           declaration: true,
           sourceMap: true
         }));
     return tsResult.js.pipe(gulp.dest('./js'));
     //return tsResult.js.pipe(gulp.dest('./js/nine-tails.js'));
+});
+
+gulp.task("bundle", ["build"], function () {
+  var b = browserify({
+    standalone : 'NineTails',
+    entries: "./src/nine-tails.js",
+    debug: true
+  });
+
+  return b.bundle()
+    .pipe(source("nine-tails.js"))
+    //.pipe(buffer())
+    .pipe(gulp.dest("./js/"));
 });
 
 gulp.task('build-site', ['build-site-typescript', 'build-site-sass'], function (done) {

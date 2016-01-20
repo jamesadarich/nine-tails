@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es3",
         "module": "amd",
         "declaration": true,
         "noImplicitAny": true,
@@ -19,6 +19,7 @@
         "./color-type.ts",
         "./color.ts",
         "./hue.ts",
+        "./nine-tails.ts",
         "./overflow-type.ts",
         "./overflow.ts",
         "./position-type.ts",

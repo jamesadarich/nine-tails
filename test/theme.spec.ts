@@ -1,16 +1,13 @@
-/// <reference path="../src/nine-tails.ts"/>
-///<reference path="../src/theme.ts"/>
-///<reference path="../src/rule.ts"/>
-///<reference path="../src/size.ts"/>
-///<reference path="../src/size-type.ts"/>
 ///<reference path="../typings/jasmine/jasmine.d.ts"/>
+import { Theme } from "../src/theme";
+import * as NineTails from "../src/nine-tails";
 
 describe("Theme", function() {
    describe("constructing a theme", function () {
 
       it("should create a style sheet element", function () {
 
-         var theme = new NineTails.Theme();
+         var theme = new Theme();
 
          expect(theme.styleSheet).not.toBe(null);
 
@@ -27,7 +24,7 @@ describe("Theme", function() {
       it("should create a rule with selector 'gotcha'", function () {
          var ruleSpy = spyOn(NineTails, "Rule");
 
-         var theme = new NineTails.Theme();
+         var theme = new Theme();
 
          theme.createRule("gotcha");
 

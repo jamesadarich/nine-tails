@@ -1,7 +1,6 @@
-/// <reference path="../src/nine-tails.ts"/>
-///<reference path="../src/rule.ts"/>
-///<reference path="../src/style.ts"/>
 ///<reference path="../typings/jasmine/jasmine.d.ts"/>
+import { Rule } from "../src/rule";
+import { Style } from "../src/style";
 
 describe("Rule", function() {
    describe("linking a style to the Rule", function () {
@@ -13,9 +12,9 @@ describe("Rule", function() {
          var styleSheet = <CSSStyleSheet>styleElement.sheet;
          styleSheet.addRule("zoolander");
 
-         var rule = new NineTails.Rule(<CSSStyleRule>styleSheet.cssRules[0]);
+         var rule = new Rule(<CSSStyleRule>styleSheet.cssRules[0]);
 
-         var style = new NineTails.Style();
+         var style = new Style();
          spyOn(style, "onSet");
 
          rule.linkStyle("derelict", style);
@@ -33,9 +32,9 @@ describe("Rule", function() {
 
          var zoolander = <CSSStyleRule>styleSheet.cssRules[0];
 
-         var rule = new NineTails.Rule(zoolander);
+         var rule = new Rule(zoolander);
 
-         var style = new NineTails.Style();
+         var style = new Style();
          spyOn(style, "get").and.returnValue("blue steel");
 
          rule.linkStyle("derelict", style);
@@ -53,9 +52,9 @@ describe("Rule", function() {
 
          var zoolander = <CSSStyleRule>styleSheet.cssRules[0];
 
-         var rule = new NineTails.Rule(zoolander);
+         var rule = new Rule(zoolander);
 
-         var style = new NineTails.Style();
+         var style = new Style();
          spyOn(style, "onSet");
 
          rule.linkStyle("derelict", style);
