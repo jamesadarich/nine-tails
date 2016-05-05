@@ -1,6 +1,6 @@
 {
   "name": "nine-tails",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A handy library to dynamically change css styles at run time.",
   "main": "js/nine-tails.js",
   "directories": {
