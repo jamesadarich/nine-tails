@@ -33,7 +33,7 @@ gulp.task('build', function (done) {
     var tsResult = gulp.src('./src/**/*.ts')
       .pipe(ts({
           noImplicitAny: true,
-          module: 'commonjs',
+          module: 'umd',
           out: 'nine-tails.js',
           declaration: true,
           sourceMap: true

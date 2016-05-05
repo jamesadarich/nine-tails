@@ -1,6 +1,5 @@
 ///<reference path="../typings/jasmine/jasmine.d.ts"/>
-import { BorderStyle } from "../src/border-style";
-import { BorderStyleType } from "../src/border-style-type";
+import { BorderStyle, BorderStyleType } from "../src/nine-tails";
 
 describe("BorderStyle", function () {
    describe("constructing a new BorderStyle", function(){

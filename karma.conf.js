@@ -9,11 +9,13 @@ module.exports = function(config) {
          'karma-coverage',
          'karma-phantomjs-launcher',
          'karma-chrome-launcher',
-			'karma-requirejs'
+			   'karma-requirejs'
       ],
 
+      browserNoActivityTimeout: 120000,
+
       // base path that will be used to resolve all patterns (eg. files, exclude)
-      basePath: '',
+      basePath: 'test',
 
 
       // frameworks to use
@@ -23,8 +25,8 @@ module.exports = function(config) {
 
       // list of files / patterns to load in the browser
       files: [
-         'test/*.js',
-         'js/nine-tails.js'
+         'border-style.spec.js',
+         { pattern: "../src/*.js", included: false }
       ],
 
 
@@ -36,7 +38,7 @@ module.exports = function(config) {
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
-        'js/nine-tails.js': 'coverage'
+        '../src/nine-tails.js': 'coverage'
       },
 
 
@@ -72,7 +74,7 @@ module.exports = function(config) {
 
       // start these browsers
       // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-      browsers: [/*'Chrome'*/'PhantomJS'/*, 'Chrome'/*, 'IE'*/],
+      browsers: [/*'Chrome''PhantomJS',*/ 'Chrome'/*, 'IE'*/],
 
 
       // Continuous Integration mode
