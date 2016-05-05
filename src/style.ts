@@ -8,18 +8,18 @@
       this.handlers = [];
     }
 
-    public get():string {
+    public get(): string {
       return this._value;
     }
 
-    public notifyHandlers(): void {
-      for(var i = 0; i < this.handlers.length; i++) {
-        this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() }, this.handlers[i].extras);
+    protected notifyHandlers(): void {
+      for (var i = 0; i < this.handlers.length; i++) {
+        this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() });
       }
     }
 
-    public onSet(handler: any, context: any, extras: any) : void {
-      this.handlers.push({ handler: handler, context: context, extras: extras });
+    public onSet(handler: any, context: any) : void {
+      this.handlers.push({ handler: handler, context: context });
     }
   }
 //}

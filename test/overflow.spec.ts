@@ -1,4 +1,4 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { OverflowType } from "../src/overflow-type";
 import { Overflow } from "../src/overflow";
 import { Style } from "../src/style";
@@ -70,4 +70,4 @@ describe("Overflow", function() {
          expect(overflow.notifyHandlers).toHaveBeenCalled();
       });
    });
-});
+});*/

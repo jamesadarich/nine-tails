@@ -1,4 +1,4 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Theme } from "../src/theme";
 import * as NineTails from "../src/nine-tails";
 
@@ -32,4 +32,4 @@ describe("Theme", function() {
       });
 
    });
-});
+});*

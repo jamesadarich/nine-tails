@@ -1,9 +1,9 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Size } from "../src/size";
 import { SizeType } from "../src/size-type";
 import { Style } from "../src/style";
 
-describe("Size", function() {
+describe("Size"/, function() {
    describe("constructing a new Size", function () {
       it("should set the value to 1", function () {
          var size = new Size(1, SizeType.Pixels);
@@ -106,4 +106,4 @@ describe("Size", function() {
          expect(size.get()).toBe("99%");
       });
    });
-});
+});*/

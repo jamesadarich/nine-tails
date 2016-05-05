@@ -1,7 +1,6 @@
 
 import { Style } from "./style";
 
-//namespace NineTails {
   export class Rule {
 
     private cssRule: CSSStyleRule;
@@ -11,7 +10,7 @@ import { Style } from "./style";
     }
 
     public linkStyle(styleName : string, style : Style): void {
-      style.onSet(this.setStyle, this, styleName);
+      style.onSet((event: any) => this.setStyle(event.newValue, styleName), this);
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
         (<any>this.cssRule.style)[styleName] = style.get();
@@ -33,4 +32,3 @@ import { Style } from "./style";
       }
     }
   }
-//}

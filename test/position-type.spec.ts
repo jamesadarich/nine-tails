@@ -1,4 +1,4 @@
-/// <reference path="../src/nine-tails.ts"/>
+/*/// <reference path="../src/nine-tails.ts"/>
 import { PositionType } from "../src/position-type";
 import { Position } from "../src/position";
 import { Style } from "../src/style";
@@ -70,4 +70,4 @@ describe("Position", function() {
          expect(position.notifyHandlers).toHaveBeenCalled();
       });
    });
-});
+});*/

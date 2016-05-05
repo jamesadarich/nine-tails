@@ -1,4 +1,4 @@
-/// <reference path="../src/nine-tails.ts"/>
+/*/// <reference path="../src/nine-tails.ts"/>
 import { Color } from "../src/color";
 import { Hue } from "../src/hue";
 
@@ -39,4 +39,4 @@ describe("Hue", function() {
             expect(hue.contrastColor.alpha).toBe(1);
         });
    });
-});
+});*/
