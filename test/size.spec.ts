@@ -114,5 +114,25 @@ Tape.test("Size", (test: Tape.Test) => {
 
       test.end();
     });
+
+    test.test("should keep the type Pixels if not input", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Pixels);
+
+      size.set(1);
+
+      test.equal(SizeType.Pixels, size.type);
+
+      test.end();
+    });
+
+    test.test("should keep the type Percentage if not input", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Percentage);
+
+      size.set(1);
+
+      test.equal(SizeType.Percentage, size.type);
+
+      test.end();
+    });
   });
 });

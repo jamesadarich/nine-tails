@@ -13,18 +13,18 @@ import { SizeType } from "./size-type";
       }
 
       get() : string {
-        if (this.type === SizeType.Pixels) {
-          return this.value.toString() + 'px';
-        }
-        else if (this.type === SizeType.Percentage) {
+        if (this.type === SizeType.Percentage) {
           return this.value.toString() + '%';
+        }
+        else {
+          return this.value.toString() + 'px';
         }
       }
 
       set(value: number, type?: SizeType) : void {
         this.value = value;
 
-        if (type != null) {
+        if (type !== undefined) {
           this.type = type;
         }
 
