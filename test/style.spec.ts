@@ -1,4 +1,4 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Style } from "../src/style";
 
 describe("Style", function() {
@@ -42,4 +42,4 @@ describe("Style", function() {
          expect(style.handlers[0].handler.call).toHaveBeenCalledWith(2, { newValue: "" }, 3);
       });
    });
-});
+});*/

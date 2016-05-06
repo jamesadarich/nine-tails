@@ -1,4 +1,4 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Rule } from "../src/rule";
 import { Style } from "../src/style";
 
@@ -69,3 +69,4 @@ describe("Rule", function() {
       });
    });
 });
+*/

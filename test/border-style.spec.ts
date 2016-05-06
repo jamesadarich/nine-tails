@@ -1,7 +1,31 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
-import { BorderStyle } from "../src/border-style";
-import { BorderStyleType } from "../src/border-style-type";
+import * as Tape from "tape";
+import { BorderStyle, BorderStyleType } from "../src/nine-tails";
 
+Tape.test("BorderStyle", (test: any) => {
+
+  test.test("constructing a new BorderStyle", (test: any) => {
+
+    test.test("should set the type to Dashed", (test: any) => {
+
+      var borderStyle = new BorderStyle(BorderStyleType.Dashed);
+
+      test.equal(borderStyle.type, BorderStyleType.Dashed);
+
+      test.end();
+    });
+
+      test.test("should set the type to Solid", (test: any) => {
+
+        var borderStyle = new BorderStyle(BorderStyleType.Solid);
+
+        test.equal(borderStyle.type, BorderStyleType.Solid);
+
+        test.end();
+      });
+  });
+});
+
+/*
 describe("BorderStyle", function () {
    describe("constructing a new BorderStyle", function(){
       it("should set the type to Dashed", function() {
@@ -67,4 +91,4 @@ describe("BorderStyle", function () {
          expect(borderStyle.notifyHandlers).toHaveBeenCalled();
       });
    });
-});
+});*/

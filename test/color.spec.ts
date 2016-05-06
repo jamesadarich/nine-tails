@@ -1,4 +1,4 @@
-///<reference path="../typings/jasmine/jasmine.d.ts"/>
+/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Color } from "../src/color";
 import { Style } from "../src/style";
 
@@ -163,4 +163,4 @@ describe("Color", function() {
          expect(color.notifyHandlers).toHaveBeenCalled();
       });
    });
-});
+});*/
