@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepublish": "gulp bundle",
-    "test": "tape test/**/*.spec.js | tap-spec"
+    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-spec"
   },
   "repository": {
     "type": "git",

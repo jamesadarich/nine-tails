@@ -13,7 +13,7 @@ typings
 # test files
 /test/**/*.spec.js
 /test/**/*.spec.js.map
-/test/coverage
+/coverage
 
 #site files
 /site/css
