@@ -8,7 +8,8 @@
   },
   "scripts": {
     "prepublish": "gulp bundle",
-    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-spec"
+    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot",
+    "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html"
   },
   "repository": {
     "type": "git",
@@ -29,22 +30,16 @@
   "homepage": "https://github.com/jamesrichford/nine-tails",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "covert": "^1.1.0",
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.29",
     "gulp-sass": "^2.1.0",
     "gulp-typescript": "^2.8.1",
-    "jasmine": "^2.3.2",
-    "jasmine-core": "^2.3.4",
-    "karma": "^0.13.9",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-coverage": "^0.5.0",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-requirejs": "^0.2.3",
-    "phantomjs": "^1.9.18",
+    "istanbul": "^0.4.3",
+    "remap-istanbul": "^0.6.3",
+    "tap-dot": "^1.0.5",
     "tape": "^4.5.1",
     "typescript": "^1.6.2",
+    "typings": "^0.8.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },

@@ -17,7 +17,6 @@
         "./border-style.ts",
         "./color-type.ts",
         "./color.ts",
-        "./hue.ts",
         "./nine-tails.ts",
         "./overflow-type.ts",
         "./overflow.ts",

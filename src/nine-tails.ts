@@ -2,7 +2,6 @@ import { BorderStyleType } from "./border-style-type";
 import { BorderStyle } from "./border-style";
 import { ColorType } from "./color-type";
 import { Color } from "./color";
-import { Hue } from "./hue";
 import { OverflowType } from "./overflow-type";
 import { Overflow } from "./overflow";
 import { PositionType } from "./position-type";
@@ -18,7 +17,6 @@ export {
    BorderStyle,
    ColorType,
    Color,
-   Hue,
    OverflowType,
    Overflow,
    PositionType,

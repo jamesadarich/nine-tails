@@ -1,109 +1,118 @@
-/*///<reference path="../typings/jasmine/jasmine.d.ts"/>
-import { Size } from "../src/size";
-import { SizeType } from "../src/size-type";
-import { Style } from "../src/style";
+import * as Tape from "tape";
+import { Size, SizeType } from "../src/nine-tails";
 
-describe("Size"/, function() {
-   describe("constructing a new Size", function () {
-      it("should set the value to 1", function () {
-         var size = new Size(1, SizeType.Pixels);
+Tape.test("Size", (test: Tape.Test) => {
 
-         expect(size.value).toBe(1);
-      });
+  test.test("constructing a new Size", (test: Tape.Test) => {
 
-      it("should set the value to 99", function () {
-         var size = new Size(99, SizeType.Pixels);
+    test.test("should set the value to 1", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Pixels);
 
-         expect(size.value).toBe(99);
-      });
-      it("should set the type to Pixels", function () {
-         var size = new Size(1, SizeType.Pixels);
+      test.equal(1, size.value);
 
-         expect(size.type).toBe(SizeType.Pixels);
-      });
+      test.end();
+    });
 
-      it("should set the type to Percentage", function () {
-         var size = new Size(99, SizeType.Percentage);
+    test.test("should set the value to 99", (test: Tape.Test) => {
+      var size = new Size(99, SizeType.Pixels);
 
-         expect(size.type).toBe(SizeType.Percentage);
-      });
+      test.equal(99, size.value);
 
-      it("should call the super function", function () {
-         spyOn(Style, "call");
+      test.end();
+    });
 
-         var size = new Size(99, SizeType.Percentage);
+    test.test("should set the type to Pixels", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Pixels);
 
-         expect(Style.call).toHaveBeenCalledWith(size);
-      });
-   });
+      test.equal(SizeType.Pixels, size.type);
 
-   describe("setting the size", function() {
-      it("should set the value to 1", function () {
-         var size = new Size(99, SizeType.Pixels);
+      test.end();
+    });
 
-         size.set(1);
+    test.test("should set the type to Percentage", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Percentage);
 
-         expect(size.value).toBe(1);
-      });
+      test.equal(SizeType.Percentage, size.type);
 
-      it("should the value to 99", function () {
-         var size = new Size(1, SizeType.Pixels);
+      test.end();
+    });
+  });
 
-         size.set(99);
+  test.test("getting a size value", (test: Tape.Test) => {
 
-         expect(size.value).toBe(99);
-      });
+    test.test("should return '1px'", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Pixels);
 
-      it("should set the type to Pixels", function () {
-         var size = new Size(1, SizeType.Percentage);
+      test.equal("1px", size.get());
 
-         size.set(99, SizeType.Pixels);
+      test.end();
+    });
 
-         expect(size.type).toBe(SizeType.Pixels);
-      });
+    test.test("should return '99px'", (test: Tape.Test) => {
+      var size = new Size(99, SizeType.Pixels);
 
-      it("should set the type to Percentage", function () {
-         var size = new Size(99, SizeType.Pixels);
+      test.equal('99px', size.get());
 
-         size.set(99, SizeType.Percentage);
+      test.end();
+    });
 
-         expect(size.type).toBe(SizeType.Percentage);
-      });
+    test.test("should return '1%'", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Percentage);
 
-      it("should call notifyHandlers", function () {
-         var size = new Size(99, SizeType.Percentage);
+      test.equal("1%", size.get());
 
-         spyOn(size, "notifyHandlers");
+      test.end();
+    });
 
-         size.set(1);
+    test.test("should return '99%'", (test: Tape.Test) => {
+      var size = new Size(99, SizeType.Percentage);
 
-         expect(size.notifyHandlers).toHaveBeenCalled();
-      });
-   });
+      test.equal("99%", size.get());
 
-   describe("getting the size", function() {
-      it("should return '1px'", function () {
-         var size = new Size(1, SizeType.Pixels);
+      test.end();
+    });
+  });
 
-         expect(size.get()).toBe("1px");
-      });
+  test.test("setting a size", (test: Tape.Test) => {
 
-      it("should return '99px'", function () {
-         var size = new Size(99, SizeType.Pixels);
+    test.test("should set the value to 1", (test: Tape.Test) => {
+      var size = new Size(0, SizeType.Pixels);
 
-         expect(size.get()).toBe("99px");
-      });
+      size.set(1, SizeType.Pixels);
 
-      it("should return '1%'", function () {
-         var size = new Size(1, SizeType.Percentage);
+      test.equal(1, size.value);
 
-         expect(size.get()).toBe("1%");
-      });
+      test.end();
+    });
 
-      it("should return '99%'", function () {
-         var size = new Size(99, SizeType.Percentage);
+    test.test("should set the value to 99", (test: Tape.Test) => {
+      var size = new Size(0, SizeType.Pixels);
 
-         expect(size.get()).toBe("99%");
-      });
-   });
-});*/
+      size.set(99, SizeType.Pixels);
+
+      test.equal(99, size.value);
+
+      test.end();
+    });
+
+    test.test("should set the type to Pixels", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Percentage);
+
+      size.set(1, SizeType.Pixels);
+
+      test.equal(SizeType.Pixels, size.type);
+
+      test.end();
+    });
+
+    test.test("should set the type to Percentage", (test: Tape.Test) => {
+      var size = new Size(1, SizeType.Pixels);
+
+      size.set(1, SizeType.Percentage);
+
+      test.equal(SizeType.Percentage, size.type);
+
+      test.end();
+    });
+  });
+});

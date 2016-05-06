@@ -1,3 +1,30 @@
+import * as Tape from "tape";
+import { Color } from "../src/nine-tails";
+/*
+Tape.test("Color", (test: Tape.Test) => {
+
+  test.test("constructing a new Color", (test: Tape.Test) => {
+
+    test.test("should set the red to 100", (test: Tape.Test) => {
+
+       var color = new Color("rgba(100, 0, 0, 0)");
+
+      test.equal(100, color.red);
+
+      test.end();
+    });
+
+      test.test("should set the red to 255", (test: Tape.Test) => {
+
+
+         var color = new Color("rgba(255, 0, 0, 0)");
+
+        test.equal(255, color.red);
+
+        test.end();
+      });
+  });
+});*/
 /*///<reference path="../typings/jasmine/jasmine.d.ts"/>
 import { Color } from "../src/color";
 import { Style } from "../src/style";

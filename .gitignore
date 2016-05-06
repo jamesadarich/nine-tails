@@ -7,7 +7,7 @@ src/**/*.js.map
 node_modules
 npm-debug.log
 
-# tsd
+# TypeScript Definitions
 typings
 
 # test files
