@@ -25,8 +25,7 @@
         "./rule.spec.ts",
         "./size.spec.ts",
         "./style.spec.ts",
-        "./theme.spec.ts",
-        "../typings/main.d.ts"
+        "./theme.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

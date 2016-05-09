@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepublish": "gulp bundle",
-    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot",
+    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
     "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html"
   },
   "repository": {
