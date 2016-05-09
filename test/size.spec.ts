@@ -1,12 +1,12 @@
 import * as Tape from "tape";
 import { Size, SizeType } from "../src/nine-tails";
 
-Tape.test("Size", (test: Tape.Test) => {
+Tape("Size", (test: Tape.Test) => {
 
   test.test("constructing a new Size", (test: Tape.Test) => {
 
     test.test("should set the value to 1", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Pixels);
+      let size = new Size(1, SizeType.Pixels);
 
       test.equal(1, size.value);
 
@@ -14,7 +14,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the value to 99", (test: Tape.Test) => {
-      var size = new Size(99, SizeType.Pixels);
+      let size = new Size(99, SizeType.Pixels);
 
       test.equal(99, size.value);
 
@@ -22,7 +22,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the type to Pixels", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Pixels);
+      let size = new Size(1, SizeType.Pixels);
 
       test.equal(SizeType.Pixels, size.type);
 
@@ -30,7 +30,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the type to Percentage", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Percentage);
+      let size = new Size(1, SizeType.Percentage);
 
       test.equal(SizeType.Percentage, size.type);
 
@@ -41,7 +41,7 @@ Tape.test("Size", (test: Tape.Test) => {
   test.test("getting a size value", (test: Tape.Test) => {
 
     test.test("should return '1px'", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Pixels);
+      let size = new Size(1, SizeType.Pixels);
 
       test.equal("1px", size.get());
 
@@ -49,15 +49,15 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should return '99px'", (test: Tape.Test) => {
-      var size = new Size(99, SizeType.Pixels);
+      let size = new Size(99, SizeType.Pixels);
 
-      test.equal('99px', size.get());
+      test.equal("99px", size.get());
 
       test.end();
     });
 
     test.test("should return '1%'", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Percentage);
+      let size = new Size(1, SizeType.Percentage);
 
       test.equal("1%", size.get());
 
@@ -65,7 +65,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should return '99%'", (test: Tape.Test) => {
-      var size = new Size(99, SizeType.Percentage);
+      let size = new Size(99, SizeType.Percentage);
 
       test.equal("99%", size.get());
 
@@ -76,7 +76,7 @@ Tape.test("Size", (test: Tape.Test) => {
   test.test("setting a size", (test: Tape.Test) => {
 
     test.test("should set the value to 1", (test: Tape.Test) => {
-      var size = new Size(0, SizeType.Pixels);
+      let size = new Size(0, SizeType.Pixels);
 
       size.set(1, SizeType.Pixels);
 
@@ -86,7 +86,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the value to 99", (test: Tape.Test) => {
-      var size = new Size(0, SizeType.Pixels);
+      let size = new Size(0, SizeType.Pixels);
 
       size.set(99, SizeType.Pixels);
 
@@ -96,7 +96,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the type to Pixels", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Percentage);
+      let size = new Size(1, SizeType.Percentage);
 
       size.set(1, SizeType.Pixels);
 
@@ -106,7 +106,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should set the type to Percentage", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Pixels);
+      let size = new Size(1, SizeType.Pixels);
 
       size.set(1, SizeType.Percentage);
 
@@ -116,7 +116,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should keep the type Pixels if not input", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Pixels);
+      let size = new Size(1, SizeType.Pixels);
 
       size.set(1);
 
@@ -126,7 +126,7 @@ Tape.test("Size", (test: Tape.Test) => {
     });
 
     test.test("should keep the type Percentage if not input", (test: Tape.Test) => {
-      var size = new Size(1, SizeType.Percentage);
+      let size = new Size(1, SizeType.Percentage);
 
       size.set(1);
 

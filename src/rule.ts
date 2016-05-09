@@ -5,11 +5,11 @@ import { Style } from "./style";
 
     private cssRule: CSSStyleRule;
 
-    constructor(cssRule : CSSStyleRule) {
+    constructor(cssRule: CSSStyleRule) {
       this.cssRule = cssRule;
     }
 
-    public linkStyle(styleName : string, style : Style): void {
+    public linkStyle(styleName: string, style: Style): void {
       style.onSet((event: any) => this.setStyle(event.newValue, styleName), this);
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
@@ -21,7 +21,7 @@ import { Style } from "./style";
       }
     }
 
-    private setStyle(update: any, styleName : string): void {
+    private setStyle(update: any, styleName: string): void {
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
         (<any>this.cssRule.style)[styleName] = update.newValue;

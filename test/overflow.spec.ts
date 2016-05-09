@@ -2,13 +2,13 @@ import * as Tape from "tape";
 import { OverflowType } from "../src/overflow-type";
 import { Overflow } from "../src/overflow";
 
-Tape.test("Overflow", (test: Tape.Test) => {
+Tape("Overflow", (test: Tape.Test) => {
 
   test.test("constructing a new Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Auto", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Auto);
+      let overflow = new Overflow(OverflowType.Auto);
 
       test.equal(overflow.type, OverflowType.Auto);
 
@@ -17,7 +17,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Hidden", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Hidden);
+      let overflow = new Overflow(OverflowType.Hidden);
 
       test.equal(overflow.type, OverflowType.Hidden);
 
@@ -26,7 +26,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Inherit", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Inherit);
+      let overflow = new Overflow(OverflowType.Inherit);
 
       test.equal(overflow.type, OverflowType.Inherit);
 
@@ -35,7 +35,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Initial", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Initial);
+      let overflow = new Overflow(OverflowType.Initial);
 
       test.equal(overflow.type, OverflowType.Initial);
 
@@ -44,7 +44,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Overlay", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Overlay);
+      let overflow = new Overflow(OverflowType.Overlay);
 
       test.equal(overflow.type, OverflowType.Overlay);
 
@@ -53,7 +53,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Scroll", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Scroll);
+      let overflow = new Overflow(OverflowType.Scroll);
 
       test.equal(overflow.type, OverflowType.Scroll);
 
@@ -62,7 +62,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
     test.test("should set the OverflowType to Visible", (test: Tape.Test) => {
 
-      var overflow = new Overflow(OverflowType.Visible);
+      let overflow = new Overflow(OverflowType.Visible);
 
       test.equal(overflow.type, OverflowType.Visible);
 
@@ -74,7 +74,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Auto should return 'auto'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         test.equal(overflow.get(), "auto");
 
@@ -83,7 +83,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Hidden should return 'hidden'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Hidden);
+        let overflow = new Overflow(OverflowType.Hidden);
 
         test.equal(overflow.get(), "hidden");
 
@@ -92,7 +92,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Inherit should return 'inherit'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Inherit);
+        let overflow = new Overflow(OverflowType.Inherit);
 
         test.equal(overflow.get(), "inherit");
 
@@ -101,7 +101,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Initial should return 'initial'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Initial);
+        let overflow = new Overflow(OverflowType.Initial);
 
         test.equal(overflow.get(), "initial");
 
@@ -110,7 +110,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Overlay should return 'overlay'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Overlay);
+        let overflow = new Overflow(OverflowType.Overlay);
 
         test.equal(overflow.get(), "overlay");
 
@@ -119,7 +119,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Scroll should return 'scroll'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Scroll);
+        let overflow = new Overflow(OverflowType.Scroll);
 
         test.equal(overflow.get(), "scroll");
 
@@ -128,7 +128,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Visible should return 'visible'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Visible);
+        let overflow = new Overflow(OverflowType.Visible);
 
         test.equal(overflow.get(), "visible");
 
@@ -140,7 +140,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Auto should return 'auto'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Visible);
+        let overflow = new Overflow(OverflowType.Visible);
 
         overflow.set(OverflowType.Auto);
 
@@ -151,7 +151,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Hidden should return 'hidden'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Hidden);
 
@@ -162,7 +162,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Inherit should return 'inherit'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Inherit);
 
@@ -173,7 +173,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Initial should return 'initial'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Initial);
 
@@ -184,7 +184,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Overlay should return 'overlay'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Overlay);
 
@@ -195,7 +195,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Scroll should return 'scroll'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Scroll);
 
@@ -206,7 +206,7 @@ Tape.test("Overflow", (test: Tape.Test) => {
 
       test.test("OverflowType.Visible should return 'visible'", (test: Tape.Test) => {
 
-        var overflow = new Overflow(OverflowType.Auto);
+        let overflow = new Overflow(OverflowType.Auto);
 
         overflow.set(OverflowType.Visible);
 

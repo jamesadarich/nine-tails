@@ -8,7 +8,8 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "moduleResolution": "node"
     },
     "buildOnSave": true,
     "compileOnSave": true,
@@ -25,7 +26,8 @@
         "./rule.spec.ts",
         "./size.spec.ts",
         "./style.spec.ts",
-        "./theme.spec.ts"
+        "./theme.spec.ts",
+        "../typings/main.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
