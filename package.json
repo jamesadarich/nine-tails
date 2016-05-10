@@ -8,7 +8,7 @@
   },
   "scripts": {
     "prepublish": "gulp bundle",
-    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
+    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tape-run --port 9999 && npm run remap-coverage",
     "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html"
   },
   "repository": {
@@ -41,12 +41,12 @@
     "typescript": "^1.6.2",
     "typings": "^0.8.1",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+   "node-static": "^0.7.7",
+   "backbone.marionette": "^2.4.4",
+   "requirejs": "^2.1.22",
+   "jquery": "^2.1.4"
   },
   "dependencies": {
-    "node-static": "^0.7.7",
-    "backbone.marionette": "^2.4.4",
-    "requirejs": "^2.1.22",
-    "jquery": "^2.1.4"
   }
 }
