@@ -3,6 +3,7 @@
     "node": "registry:dt/node#4.0.0+20160505172921"
   },
   "dependencies": {
+    "sinon": "registry:npm/sinon#1.16.0+20160427193336",
     "tape": "registry:npm/tape#4.0.0+20160322235547"
   }
 }
