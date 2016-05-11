@@ -21,6 +21,8 @@
     "files": [
         "./border-style.spec.ts",
         "./color.spec.ts",
+        "./end-to-end/server.ts",
+        "./end-to-end/specs/color.spec.ts",
         "./overflow.spec.ts",
         "./position.spec.ts",
         "./rule.spec.ts",

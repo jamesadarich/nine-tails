@@ -11,6 +11,8 @@ npm-debug.log
 typings
 
 # test files
+/test/**/*.js
+/test/**/*.js.map
 /test/**/*.spec.js
 /test/**/*.spec.js.map
 /coverage
