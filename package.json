@@ -10,6 +10,7 @@
     "prepublish": "gulp bundle",
     "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
     "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html",
+    "test-e2e": "npm-run-all --parallel serve-end-to-end-test-site end-to-end-test",
     "end-to-end-test": "protractor test/end-to-end/protractor.config",
     "serve-end-to-end-test-site": "node test/end-to-end/server.js"
   },
@@ -33,13 +34,14 @@
   "devDependencies": {
     "backbone.marionette": "^2.4.4",
     "browserify": "^13.0.0",
+    "express": "^4.13.4",
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.29",
     "gulp-sass": "^2.1.0",
     "gulp-typescript": "^2.8.1",
     "istanbul": "^0.4.3",
     "jquery": "^2.1.4",
-    "node-static": "^0.7.7",
+    "npm-run-all": "^2.1.0",
     "protractor": "^3.3.0",
     "remap-istanbul": "^0.6.3",
     "requirejs": "^2.1.22",

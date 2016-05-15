@@ -1,15 +1,19 @@
-var static = require('node-static');
+import * as Express from "express";
+import * as http from "http";
 
-//
-// Create a node-static server instance to serve the './public' folder
-//
-var file = new static.Server('./test/end-to-end/site');
+let app = Express();
 
-require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
-        //
-        // Serve files!
-        //
-        file.serve(request, response);
-    }).resume();
-}).listen(8080);
+app.set("port", process.env.PORT || 8080);
+app.use(Express.static("./test/end-to-end/site"));
+app.use("/node_modules", Express.static("node_modules"));
+app.use("/nine-tails", Express.static("./js"));
+
+
+http.createServer(app).listen(app.get("port"), () => {
+  console.log("Express server listening on port " + app.get("port"));
+});
+
+//in case can't find path it's probably SPA so...
+app.use(function(req: any, res: any, next: any) {
+  res.status(200).sendFile("./test/end-to-end/site/index.html", { root: "./" });
+});
