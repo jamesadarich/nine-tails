@@ -1,12 +1,9 @@
-
-//namespace NineTails {
-   export enum OverflowType {
-      Auto,
-      Hidden,
-      Inherit,
-      Initial,
-      Overlay,
-      Scroll,
-      Visible
-   }
-//}
+export enum OverflowType {
+    Auto,
+    Hidden,
+    Inherit,
+    Initial,
+    Overlay,
+    Scroll,
+    Visible
+ }

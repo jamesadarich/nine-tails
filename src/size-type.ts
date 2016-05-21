@@ -1,5 +1,4 @@
-
-   export enum SizeType {
-      Pixels,
-      Percentage
-   }
+export enum SizeType {
+    Pixels,
+    Percentage
+ }

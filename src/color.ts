@@ -1,7 +1,6 @@
 import { Style } from "./style";
 
-//namespace NineTails {
-   export class Color extends Style {
+export class Color extends Style {
       red: number;
       green: number;
       blue: number;
@@ -40,7 +39,7 @@ import { Style } from "./style";
          this.saturation = null;
          this.lightness = null;
          */
-         this.notifyHandlers();
+         this.setValue(this.get());
       }
 
       setRgb(red : number, green : number, blue : number) : void {
@@ -124,4 +123,3 @@ import { Style } from "./style";
             }
       }
    }
-//}

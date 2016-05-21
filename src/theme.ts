@@ -1,52 +1,31 @@
-
 import { Rule } from "./rule";
 
-//namespace NineTails {
-  export class Theme {
+export class Theme {
 
-    public styleSheet: CSSStyleSheet;
-    //public colors: Color[];
-    //public sizes: Size[];
+  public styleSheet: CSSStyleSheet;
 
-    constructor () {
-      var styleElement = document.createElement("style");
-      styleElement.title = "nine-tails";
-      styleElement.className = "nine-tails-theme";
-      //document.head.appendChild(styleElement);
-      document.querySelector("head").appendChild(styleElement);
+  constructor () {
+    var styleElement = document.createElement("style");
+    styleElement.title = "nine-tails";
+    styleElement.className = "nine-tails-theme";
 
-      this.styleSheet = <CSSStyleSheet>document.styleSheets[document.styleSheets.length -1];//<CSSStyleSheet>styleElement.sheet || <CSSStyleSheet>styleElement.styleSheet;
+    document.querySelector("head").appendChild(styleElement);
 
-      //change this to create class that extends CSSStyleSheet
-      (<any>styleElement)["theme"] = this;
+    this.styleSheet = <CSSStyleSheet>document.styleSheets[document.styleSheets.length -1];//<CSSStyleSheet>styleElement.sheet || <CSSStyleSheet>styleElement.styleSheet;
 
-      //this.colors = [];
-      //this.sizes = [];
-    }
+    //change this to create class that extends CSSStyleSheet
+    (<any>styleElement)["theme"] = this;
+  }
 
-    /*
-    createColor(value: string, name?: string): Color {
-      var color = new Color(value, name);
-      this.colors.push(color);
-      return color;
-    }
-
-    createSize(value: number, type: SizeType): Size {
-      var size = new Size(value, type);
-      this.sizes.push(size);
-      return size;
-    }
-    */
-
-    createRule(selector: string) : Rule {
-      var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
-      //find rule if already exists
-      for (var i = 0; i < cssRules.length; i++) {
-        var rule = <CSSStyleRule>cssRules[i];
-        if (rule.selectorText.toLowerCase() === selector) {
-          //need to keep the reference to namespace whilst this isn"t compiling correctly
-          return new Rule(rule);
-        }
+  createRule(selector: string) : Rule {
+    var cssRules = this.styleSheet.cssRules || this.styleSheet.rules;
+    //find rule if already exists
+    for (var i = 0; i < cssRules.length; i++) {
+      var rule = <CSSStyleRule>cssRules[i];
+      if (rule.selectorText.toLowerCase() === selector) {
+        //need to keep the reference to namespace whilst this isn"t compiling correctly
+        return new Rule(rule);
+      }
 
       var ruleIndex = 0;
          var selectors = selector.split(" ");
@@ -57,26 +36,14 @@ import { Rule } from "./rule";
          }
 
          selector = selectors.join(' ');
-      /*for (var i = 0; i < cssRules.length; i++) {
-        var rule = <CSSStyleRule>cssRules[i];
-        if (rule.selectorText.toLowerCase() === selector) {
-          //need to keep the reference to namespace whilst this isn"t compiling correctly
-          return new NineTails.Rule(rule);
-        }
-      }*/
     }
 
-if (this.styleSheet.insertRule) {
-  ruleIndex = this.styleSheet.insertRule(selector + " { }", 0);
-}else {
-  ruleIndex = this.styleSheet.addRule(selector);
+    if (this.styleSheet.insertRule) {
+      ruleIndex = this.styleSheet.insertRule(selector + " { }", 0);
+    }else {
+      ruleIndex = this.styleSheet.addRule(selector);
+    }
+
+    return new Rule(<CSSStyleRule>cssRules[ruleIndex]);
+  }
 }
-
-
-/*if (selector.charAt(0) !== "." && selector.charAt(0) !== "#") {
-  selector = selector.toLowerCase();
-}*/
-return new Rule(<CSSStyleRule>cssRules[ruleIndex]);
-  }
-  }
-//}

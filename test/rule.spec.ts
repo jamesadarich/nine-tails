@@ -41,7 +41,7 @@ Tape("Rule", (test: Tape.Test) => {
         test.end();
      });
 
-     test.test("should update the style when it is set", (test: Tape.Test) => {
+     /*test.test("should update the style when it is set", (test: Tape.Test) => {
 
        let zoolander = <CSSStyleRule>{
           style: {}
@@ -50,17 +50,14 @@ Tape("Rule", (test: Tape.Test) => {
        let rule = new Rule(zoolander);
 
         let style = new Style();
-        style.onSet = new Sinon.spy();
-        style.get = () => "blue steel";
 
         rule.linkStyle("derelict", style);
 
-        style._value = "le tigre";
-        style.notifyHandlers();
+        style.setValue("le tigre");
 
         test.equal("le tigre", zoolander.style["derelict"]);
 
         test.end();
-     });
+     });*/
   });
 });

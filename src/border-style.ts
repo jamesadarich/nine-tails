@@ -15,6 +15,6 @@ export class BorderStyle extends Style {
 
    set(type: BorderStyleType): void {
       this.type = type;
-      this.notifyHandlers();
+      this.setValue(this.get());
    }
 }

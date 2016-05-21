@@ -11,7 +11,12 @@ export class Style {
    return this._value;
  }
 
- protected notifyHandlers(): void {
+ protected setValue(value: string) {
+   this._value = value;
+   this._notifyHandlers();
+ }
+
+ private _notifyHandlers(): void {
    for (let i = 0; i < this.handlers.length; i++) {
      this.handlers[i].handler.call(this.handlers[i].context, { newValue: this.get() });
    }
