@@ -7,13 +7,6 @@ var source      = require("vinyl-source-stream");
 var buffer      = require("vinyl-buffer");
 var Server = require('karma').Server;
 
-gulp.task('test', ['build', 'build-test'], function (done) {
-    new Server({
-      configFile: __dirname + '/karma.conf.js',
-      singleRun: true
-    }, done).start();
-});
-
 gulp.task('build-test', function (done) {
   var tsResult = gulp.src('./test/**/*.ts')
     .pipe(ts({
