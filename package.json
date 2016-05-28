@@ -7,9 +7,11 @@
     "test": "test"
   },
   "scripts": {
+    "build": "tsc -p ./src",
     "build-test": "tsc -p ./test",
     "prepublish": "gulp bundle",
-    "test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
+    "test": "npm run build && npm run build-test && npm run unit-test",
+    "unit-test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
     "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html",
     "test-e2e": "npm-run-all --parallel serve-end-to-end-test-site end-to-end-test",
     "end-to-end-test": "protractor test/end-to-end/protractor.config",

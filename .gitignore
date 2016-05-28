@@ -2,6 +2,7 @@
 js
 src/**/*.js
 src/**/*.js.map
+src/**/*.d.ts
 
 # npm
 node_modules
