@@ -4,7 +4,7 @@
         "module": "umd",
         "declaration": true,
         "noImplicitAny": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "preserveConstEnums": true
     },
     "buildOnSave": true,
