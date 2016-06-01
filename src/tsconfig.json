@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es3",
         "module": "umd",
-        "declaration": true,
+        "declaration": false,
         "noImplicitAny": true,
         "sourceMap": false,
         "preserveConstEnums": true

@@ -10,6 +10,7 @@
     "build": "tsc -p ./src",
     "build-test": "tsc -p ./test",
     "bundle": "webpack -p",
+    "bundle-dev": "webpack -d",
     "prepublish": "gulp bundle",
     "test": "npm run build && npm run build-test && npm run unit-test",
     "unit-test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
