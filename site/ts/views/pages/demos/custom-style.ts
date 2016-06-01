@@ -40,8 +40,7 @@ export class CustomStyleView extends Marionette.ItemView<CustomStyleModel> {
   }
 
   private _updateStyleValue() {
-    this.style._value = this.model.get("value");
-    this.style.notifyHandlers();
+    this.style.setValue(this.model.get("value"));
   }
 
   public template: () => string = () => `

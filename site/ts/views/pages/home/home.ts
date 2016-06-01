@@ -3,6 +3,7 @@
 /// <reference path="../../../../../typings/backbone/backbone.d.ts"/>
 /// <reference path="../../../../../typings/marionette/marionette.d.ts"/>
 /// <amd-dependency path="marionette" name="Marionette"/>
+/// <amd-dependency path="nine-tails" name="NineTails"/>
 
 "use strict";
 
@@ -90,14 +91,13 @@ export class HomePage extends Marionette.LayoutView<Backbone.Model> {
    public doIt(title: string, styleValue: string, style: NineTails.Style) {
       var initialValue = style._value;
       this.el.querySelector("#showcase").innerHTML = title;
-      style._value = styleValue;
-      style.notifyHandlers();
+      style.setValue(styleValue);
       setTimeout(() => this.unDoIt(style, initialValue), 400);
    }
 
    public unDoIt(style: NineTails.Style, initialValue: string) {
-      style._value = initialValue;
-      style.notifyHandlers();
+
+     style.setValue(initialValue);
       setTimeout(() => this.getNewChange(), 400);
    }
 

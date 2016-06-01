@@ -21,11 +21,11 @@ import { Style } from "./style";
       }
     }
 
-    private setStyle(update: any, styleName: string): void {
+    private setStyle(value: any, styleName: string): void {
       styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-      
+
       try {
-        (<any>this.cssRule.style)[styleName] = update.newValue;
+        (<any>this.cssRule.style)[styleName] = value;
 
       }
       catch (e) {

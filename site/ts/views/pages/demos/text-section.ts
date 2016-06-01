@@ -35,10 +35,9 @@ export class TextSectionView extends Marionette.LayoutView<Backbone.Model> {
    }
 
    public onAttach(){
-      this.font._value = this.el.querySelector("#font-select").value;
-      this.font.notifyHandlers();
+      this.font.setValue(this.el.querySelector("#font-select").value);
       this.el.querySelector("#font-select").onchange = () => {
-         this.font._value = this.el.querySelector("#font-select").value; this.font.notifyHandlers();
+         this.font.setValue(this.el.querySelector("#font-select").value);
       };
       this.el.querySelector("#text-size").value = this.fontSize.get();
       this.el.querySelector("#text-size").oninput = () => { this.fontSize.set(parseInt(this.el.querySelector("#text-size").value), NineTails.SizeType.Pixels); };
@@ -46,36 +45,34 @@ export class TextSectionView extends Marionette.LayoutView<Backbone.Model> {
 
       var textItalicInput = <HTMLInputElement>document.documentElement.querySelector("#text-italic");
       if (textItalicInput.checked) {
-         this.italic._value = "italic";
+         this.italic.setValue("italic");
       }
       else {
-         this.italic._value = "normal";
+         this.italic.setValue("normal");
       }
-      this.italic.notifyHandlers();
-      textItalicInput.onchange = () =>  { if (textItalicInput.checked) {
-         this.italic._value = "italic";
-      }
-      else {
-         this.italic._value = "normal";
-      }
-      this.italic.notifyHandlers();
+      textItalicInput.onchange = () =>  {
+        if (textItalicInput.checked) {
+           this.italic.setValue("italic");
+        }
+        else {
+           this.italic.setValue("normal");
+        }
    };
 
    var textBoldInput = <HTMLInputElement>document.documentElement.querySelector("#text-bold");
    if (textBoldInput.checked) {
-      this.bold._value = "bold";
+      this.bold.setValue("bold");
    }
    else {
-      this.bold._value = "normal";
+      this.bold.setValue("normal");
    }
-   this.bold.notifyHandlers();
-   textBoldInput.onchange = () =>  { if (textBoldInput.checked) {
-      this.bold._value = "bold";
-   }
-   else {
-      this.bold._value = "normal";
-   }
-   this.bold.notifyHandlers();
+   textBoldInput.onchange = () =>  {
+     if (textBoldInput.checked) {
+        this.bold.setValue("bold");
+     }
+     else {
+        this.bold.setValue("normal");
+     }
 };
 }
 
