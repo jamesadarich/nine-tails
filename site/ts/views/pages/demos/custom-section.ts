@@ -3,7 +3,6 @@
 /// <reference path="../../../../../typings/backbone/backbone.d.ts"/>
 /// <reference path="../../../../../typings/marionette/marionette.d.ts"/>
 /// <amd-dependency path="marionette" name="Marionette"/>
-/// <amd-dependency path="ninetails" name="NineTails"/>
 
 import { CustomStyleListView } from "./custom-style-list";
 import { CustomStyleModel } from "../../../models/custom-style";

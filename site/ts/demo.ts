@@ -1,4 +1,5 @@
 /// <reference path="../../js/nine-tails.d.ts"/>
+/// <amd-dependency path="nine-tails" name="NineTails"/>
 
 var theme = new NineTails.Theme();
 var ruleOne = theme.createRule("header");

@@ -10,7 +10,7 @@ requirejs.config({
       jquery: 'vendor/jquery.min',
       marionette: 'vendor/backbone.marionette.min',
       underscore: 'vendor/underscore-min',
-      ninetails: 'vendor/nine-tails'
+      "nine-tails": 'vendor/nine-tails'
     },
     shim: {
      "marionette": [

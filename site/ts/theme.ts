@@ -1,4 +1,4 @@
-/// <amd-dependency path="ninetails" name="NineTails"/>
+/// <amd-dependency path="nine-tails" name="NineTails"/>
 
 export class NineTailsSiteTheme  {
   public static theme: NineTails.Theme = new NineTails.Theme();

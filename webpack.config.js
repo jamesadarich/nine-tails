@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/nine-tails.ts',
   output: {
     filename: './dist/nine-tails.js',
-    library: "NineTails",
+    library: "nine-tails",
     libraryTarget: "umd",
     umdNamedDefine: true
   },
