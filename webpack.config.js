@@ -15,8 +15,5 @@ module.exports = {
     loaders: [
       { test: /\.ts$/, loader: 'ts-loader' }
     ]
-  },
-  ts: {
-    configFileName : './src/tsconfig.json'
   }
-}
+};
