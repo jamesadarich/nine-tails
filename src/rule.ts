@@ -10,8 +10,9 @@ import { Style } from "./style";
     }
 
     public linkStyle(styleName: string, style: Style): void {
+      styleName = styleName.replace(/-([a-z])/g, (dashedAndCharacter) => dashedAndCharacter[1].toUpperCase());
+
       style.onSet((event: any) => this.setStyle(event.newValue, styleName), this);
-      styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
       try {
         (<any>this.cssRule.style)[styleName] = style.get();
 
@@ -22,7 +23,6 @@ import { Style } from "./style";
     }
 
     private setStyle(value: any, styleName: string): void {
-      styleName = styleName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
 
       try {
         (<any>this.cssRule.style)[styleName] = value;

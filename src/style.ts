@@ -11,7 +11,7 @@ export class Style {
    return this._value;
  }
 
- protected setValue(value: string) {
+ public setValue(value: string) {
    this._value = value;
    this._notifyHandlers();
  }

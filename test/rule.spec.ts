@@ -41,7 +41,7 @@ Tape("Rule", (test: Tape.Test) => {
         test.end();
      });
 
-     /*test.test("should update the style when it is set", (test: Tape.Test) => {
+     test.test("should update the style when it is set", (test: Tape.Test) => {
 
        let zoolander = <CSSStyleRule>{
           style: {}
@@ -58,6 +58,44 @@ Tape("Rule", (test: Tape.Test) => {
         test.equal("le tigre", zoolander.style["derelict"]);
 
         test.end();
-     });*/
+     });
+
+     test.test("should transform dash separated style to camel case", (test: Tape.Test) => {
+
+       let zoolander = <CSSStyleRule>{
+          style: {}
+       };
+
+       let rule = new Rule(zoolander);
+
+        let style = new Style();
+       style.onSet = Sinon.spy();
+       style.get = () => "blue steel";
+
+        rule.linkStyle("best-look", style);
+
+        test.equal("blue steel", zoolander.style["bestLook"]);
+
+        test.end();
+     });
+
+     test.test("should update the style dash separated style to camel case", (test: Tape.Test) => {
+
+       let zoolander = <CSSStyleRule>{
+          style: {}
+       };
+
+       let rule = new Rule(zoolander);
+
+        let style = new Style();
+
+        rule.linkStyle("best-look", style);
+
+        style.setValue("magnum");
+
+        test.equal("magnum", zoolander.style["bestLook"]);
+
+        test.end();
+     });
   });
 });
