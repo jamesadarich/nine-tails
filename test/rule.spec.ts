@@ -13,11 +13,11 @@ Tape("Rule", (test: Tape.Test) => {
         let rule = new Rule(zoolander);
 
         let style = new Style();
-        style.onSet = new Sinon.spy();
+        style.onSet = Sinon.spy();
 
         rule.linkStyle("derelict", style);
 
-        test.equal(true, style.onSet.calledWith(Sinon.match.func, rule));
+        test.equal(true, (<Sinon.SinonSpy>style.onSet).calledWith(Sinon.match.func, rule));
 
         test.end();
      });
@@ -31,7 +31,7 @@ Tape("Rule", (test: Tape.Test) => {
        let rule = new Rule(zoolander);
 
         let style = new Style();
-        style.onSet = new Sinon.spy();
+        style.onSet = Sinon.spy();
         style.get = () => "blue steel";
 
         rule.linkStyle("derelict", style);

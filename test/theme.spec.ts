@@ -4,7 +4,7 @@ import * as Tape from "tape";
 import * as Sinon from "sinon";
 var MockBrowser = require('mock-browser').mocks.MockBrowser;
 var mock = new MockBrowser();
-global.document = mock.getDocument(),
+(<any>global).document = mock.getDocument(),
 
 Tape("Theme", (test: Tape.Test) => {
    test.test("constructing a theme", (test: Tape.Test) => {

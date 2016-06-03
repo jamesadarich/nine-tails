@@ -15,7 +15,7 @@
     "compileOnSave": true,
     "filesGlob": [
         "./**/*.ts",
-        "../typings/main.d.ts",
+        "../typings/index.d.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
@@ -29,7 +29,7 @@
         "./size.spec.ts",
         "./style.spec.ts",
         "./theme.spec.ts",
-        "../typings/main.d.ts"
+        "../typings/index.d.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
