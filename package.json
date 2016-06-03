@@ -37,15 +37,8 @@
   },
   "homepage": "https://github.com/jamesrichford/nine-tails",
   "devDependencies": {
-    "backbone.marionette": "^2.4.4",
-    "browserify": "^13.0.0",
     "express": "^4.13.4",
-    "gulp": "^3.9.0",
-    "gulp-live-server": "0.0.29",
-    "gulp-sass": "^2.1.0",
-    "gulp-typescript": "^2.8.1",
     "istanbul": "^0.4.3",
-    "jquery": "^2.1.4",
     "mock-browser": "^0.92.12",
     "npm-run-all": "^2.1.0",
     "protractor": "^3.3.0",
@@ -57,8 +50,6 @@
     "ts-loader": "^0.8.2",
     "typescript": "^1.6.2",
     "typings": "^0.8.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.13.1"
   },
   "dependencies": {}
