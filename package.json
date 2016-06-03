@@ -1,6 +1,6 @@
 {
   "name": "nine-tails",
-  "version": "0.9.4",
+  "version": "0.10.0",
   "description": "A handy library to dynamically change css styles at run time.",
   "main": "dist/nine-tails.js",
   "directories": {
@@ -11,7 +11,7 @@
     "build-test": "tsc -p ./test",
     "bundle": "webpack -p",
     "bundle-dev": "webpack -d",
-    "prepublish": "gulp bundle",
+    "prepublish": "npm run bundle",
     "test": "npm run build && npm run build-test && npm run unit-test",
     "unit-test": "istanbul cover node_modules/tape/bin/tape -- test/*.spec.js | tap-dot && npm run remap-coverage",
     "remap-coverage": "remap-istanbul -i coverage/coverage.json --output coverage/report --type html",
