@@ -8,10 +8,10 @@ Tape.test("Theme", (test: Tape.Test) => {
 
       test.test("should create a style sheet", (test: Tape.Test) => {
 
-        var MockBrowser = require('mock-browser').mocks.MockBrowser;
-        var mockDocument = new MockBrowser().getDocument();
-        (<any>global).document = mockDocument;
-         var theme = new Theme();
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
+         let theme = new Theme();
 
          test.equal(mockDocument.styleSheets.length, 1);
 
@@ -23,85 +23,128 @@ Tape.test("Theme", (test: Tape.Test) => {
 
       test.test("should create a rule with selector 'gotcha'", (test: Tape.Test) => {
 
-        var MockBrowser = require('mock-browser').mocks.MockBrowser;
-        var mockDocument = new MockBrowser().getDocument();
-        (<any>global).document = mockDocument;
-         var theme = new Theme();
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
+         let theme = new Theme();
 
          theme.createRule("gotcha");
 
-         var nineTailsStyleSheet = mockDocument.styleSheets[0];
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
 
-         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "gotcha");
+         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "GOTCHA");
 
          test.end();
       });
 
-       test.test("should create a rule with selector '.found-it'", (test: Tape.Test) => {
+      test.test("should create a rule with selector '.found-it'", (test: Tape.Test) => {
 
-         var MockBrowser = require('mock-browser').mocks.MockBrowser;
-         var mockDocument = new MockBrowser().getDocument();
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
          (<any>global).document = mockDocument;
-          var theme = new Theme();
+         let theme = new Theme();
 
-          theme.createRule(".found-it");
+         theme.createRule(".found-it");
 
-          var nineTailsStyleSheet = mockDocument.styleSheets[0];
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
 
-          test.equal(nineTailsStyleSheet.cssRules[0].selectorText, ".found-it");
+         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, ".found-it");
 
-          test.end();
-       });
+         test.end();
+      });
 
-     test.test("should create a rule with selector 'gotcha' if document has addRule instead of insertRule", (test: Tape.Test) => {
+      test.test("should create a rule with selector 'gotcha' if document has addRule instead of insertRule", (test: Tape.Test) => {
 
-       var MockBrowser = require('mock-browser').mocks.MockBrowser;
-       var mockDocument = new MockBrowser().getDocument();
-       (<any>global).document = mockDocument;
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
 
-        var theme = new Theme();
+         let theme = new Theme();
 
-       var nineTailsStyleSheet = mockDocument.styleSheets[0];
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
+         let insertRule = nineTailsStyleSheet.insertRule;
+         nineTailsStyleSheet.addRule = (selector: string, index: number) => {
+            insertRule.call(nineTailsStyleSheet, selector + " { }", index || 0);
+         };
 
-       nineTailsStyleSheet.addRule = nineTailsStyleSheet.insertRule.bind(nineTailsStyleSheet);
-       delete nineTailsStyleSheet.insertRule;
+         nineTailsStyleSheet.insertRule = undefined;
 
-        theme.createRule("gotcha");
+         theme.createRule("gotcha");
 
-        test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "gotcha");
+         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "GOTCHA");
 
-        test.end();
-     });
+         test.end();
+      });
 
-     test.test("should create a rule with selector 'gotcha' if document has rules instead of cssRules", (test: Tape.Test) => {
+      test.test("should create a rule with selector 'gotcha' if document has rules instead of cssRules", (test: Tape.Test) => {
 
-       var MockBrowser = require('mock-browser').mocks.MockBrowser;
-       var mockDocument = new MockBrowser().getDocument();
-       (<any>global).document = mockDocument;
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
 
-        var theme = new Theme();
+         let theme = new Theme();
 
-        var nineTailsStyleSheet = mockDocument.styleSheets[0];
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
 
-        var originalInsertRule = nineTailsStyleSheet.insertRule;
+         let originalInsertRule = nineTailsStyleSheet.insertRule;
 
-        nineTailsStyleSheet.insertRule = (selectorText: string) => {
-          nineTailsStyleSheet.cssRules = nineTailsStyleSheet.rules;
-          var ruleIndex = originalInsertRule.call(nineTailsStyleSheet, selectorText);
-          nineTailsStyleSheet.rules = nineTailsStyleSheet.cssRules;
-          delete nineTailsStyleSheet.cssRules;
+         nineTailsStyleSheet.insertRule = (selectorText: string) => {
+            nineTailsStyleSheet.cssRules = nineTailsStyleSheet.rules;
+            let ruleIndex = originalInsertRule.call(nineTailsStyleSheet, selectorText);
+            nineTailsStyleSheet.rules = nineTailsStyleSheet.cssRules;
+            delete nineTailsStyleSheet.cssRules;
 
-          return ruleIndex;
-        }
+            return ruleIndex;
+         };
 
-       nineTailsStyleSheet.rules = nineTailsStyleSheet.cssRules;
-       delete nineTailsStyleSheet.cssRules;
+         nineTailsStyleSheet.rules = nineTailsStyleSheet.cssRules;
+         delete nineTailsStyleSheet.cssRules;
 
-        theme.createRule("gotcha");
+         theme.createRule("gotcha");
 
-        test.equal(nineTailsStyleSheet.rules[0].selectorText, "gotcha");
+         test.equal(nineTailsStyleSheet.rules[0].selectorText, "GOTCHA");
 
-        test.end();
-     });
+         test.end();
+      });
+
+      test.test("should pass a rule back with an existing cssRule if 'gotcha' already exists", (test: Tape.Test) => {
+
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
+
+         let theme = new Theme();
+
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
+         nineTailsStyleSheet.cssRules[0] = { selectorText: "gotcha" };
+         nineTailsStyleSheet.insertRule = Sinon.spy();
+
+         theme.createRule("gotcha");
+
+         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "gotcha");
+         test.equal(nineTailsStyleSheet.insertRule.callCount, 0);
+
+         test.end();
+      });
+
+      test.test("should still create a rule if there is another css rule already", (test: Tape.Test) => {
+
+         let MockBrowser = require("mock-browser").mocks.MockBrowser;
+         let mockDocument = new MockBrowser().getDocument();
+         (<any>global).document = mockDocument;
+
+         let theme = new Theme();
+
+         let nineTailsStyleSheet = mockDocument.styleSheets[0];
+         nineTailsStyleSheet.cssRules[0] = { selectorText: "something-else" };
+         Sinon.spy(nineTailsStyleSheet, "insertRule");
+
+         theme.createRule("gotcha");
+
+         test.equal(nineTailsStyleSheet.cssRules[0].selectorText, "GOTCHA");
+         test.equal(nineTailsStyleSheet.insertRule.callCount, 1);
+
+         test.end();
+      });
    });
 });
