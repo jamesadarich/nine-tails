@@ -4,6 +4,8 @@ describe('angularjs homepage todo list', function() {
     browser.get('http://localhost:8080');
 
     browser.executeScript(`
+      var NineTails = window["nine-tails"];
+      
       var theme = new NineTails.Theme();
 
       var rule = theme.createRule("h1");

@@ -6,7 +6,7 @@ let app = Express();
 app.set("port", process.env.PORT || 8080);
 app.use(Express.static("./test/end-to-end/site"));
 app.use("/node_modules", Express.static("node_modules"));
-app.use("/nine-tails", Express.static("./js"));
+app.use("/nine-tails", Express.static("./dist"));
 
 
 http.createServer(app).listen(app.get("port"), () => {

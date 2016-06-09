@@ -14,7 +14,7 @@ export class Color extends Style {
 
       constructor(value: string, name?: string) {
          super();
-         this.value = value;
+         this.set(value);
 
          if (name) {
             this.name = name;
@@ -24,16 +24,26 @@ export class Color extends Style {
          }
       }
 
-      get() : string {
+      get(): string {
          return this.value;
       }
 
-      set(value: string) : void {
+      set(value: string): void {
          this.value = value;
-         this.red = null;
-         this.green = null;
-         this.blue = null;
-         this.alpha = null;
+
+         if (/^rgb[a]?[\s]*\([\s]*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5][\s]*)(,[\s]*([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])[\s]*){2}(,[\s]*[0-1](\.[0-9]*)?[\s]*)?\)$/.test(value)) {
+            let rgbaValues = value.slice(value.indexOf("(") + 1, value.indexOf(")")).split(",").map(characterString => parseFloat(characterString));
+
+            this.red = rgbaValues[0];
+            this.green = rgbaValues[1];
+            this.blue = rgbaValues[2];
+            this.alpha = rgbaValues[3];
+
+            if (this.alpha === undefined) {
+               this.alpha = 1;
+            }
+
+         }
          /*
          this.hue = null;
          this.saturation = null;
