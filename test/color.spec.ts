@@ -22,6 +22,54 @@ Tape.test("Color", (test: Tape.Test) => {
 
          test.end();
       });
+
+      test.test("should set the green to 100", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 100, 0, 0)");
+
+         test.equal(color.green, 100);
+
+         test.end();
+      });
+
+      test.test("should set the green to 255", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 255, 0, 0)");
+
+         test.equal(color.green, 255);
+
+         test.end();
+      });
+
+      test.test("should set the blue to 100", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 0, 100, 0)");
+
+         test.equal(color.blue, 100);
+
+         test.end();
+      });
+
+      test.test("should set the blue to 255", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 0, 255, 0)");
+
+         test.equal(color.blue, 255);
+
+         test.end();
+      });
+
+      test.test("should set the alpha to 0.5", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 0, 0, 0.5)");
+
+         test.equal(color.alpha, 0.5);
+
+         test.end();
+      });
+
+      test.test("should set the alpha to 1.0", (test: Tape.Test) => {
+         let color = new Color("rgba(0, 0, 0, 1.0)");
+
+         test.equal(color.alpha, 1.0);
+
+         test.end();
+      });
    });
 });
 /*///<reference path="../typings/jasmine/jasmine.d.ts"/>
@@ -40,42 +88,6 @@ it("should set the red to 255", function () {
 var color = new Color("rgba(255, 0, 0, 0)");
 
 expect(color.red).toBe(255);
-});
-
-it("should set the green to 100", function () {
-var color = new Color("rgba(0, 100, 0, 0)");
-
-expect(color.green).toBe(100);
-});
-
-it("should set the green to 255", function () {
-var color = new Color("rgba(0, 255, 0, 0)");
-
-expect(color.green).toBe(255);
-});
-
-it("should set the blue to 100", function () {
-var color = new Color("rgba(0, 0, 100, 0)");
-
-expect(color.blue).toBe(100);
-});
-
-it("should set the blue to 255", function () {
-var color = new Color("rgba(0, 0, 255, 0)");
-
-expect(color.blue).toBe(255);
-});
-
-it("should set the alpha to 0.5", function () {
-var color = new Color("rgba(0, 0, 0, 0.5)");
-
-expect(color.alpha).toBe(0.5);
-});
-
-it("should set the alpha to 1.0", function () {
-var color = new Color("rgba(0, 0, 0, 1.0)");
-
-expect(color.alpha).toBe(1.0);
 });
 
 it("should set the name to null if not provided", function () {
